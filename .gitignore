@@ -16,7 +16,8 @@ data/
 work/
 .backups/
 .DS_Store
-Thumbs.db.openai/*.local.*
+Thumbs.db
+.openai/*.local.*
 
 # Actual Site identity stays in the owner-controlled source.
 .openai/hosting.json
