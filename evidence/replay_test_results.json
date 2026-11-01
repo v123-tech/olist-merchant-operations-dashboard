@@ -1,0 +1,17 @@
+{
+  "scope": "replay interfaces, business boundaries, and independent hourly enumeration",
+  "tests_run": 16,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "successful": true,
+  "elapsed_seconds": 2.7412,
+  "synthetic_oracle_orders": 35,
+  "real_oracle_orders": 60,
+  "seed": 20271009,
+  "config_sha256": "df893db60637bbe5a233939fc45cd39231eec41ceebecc24021756fe2c7a1758",
+  "test_source_sha256": "da449963c4500d4479e5ea83cd8b8680c2cfbf6d5846b58e37569b24eff0602b",
+  "replay_source_sha256": "25093180ace65bb98bb80ec4feaeca0c31a0441a61b9d7191c4d2f838b8ac60d",
+  "run_at": "2026-10-09T14:12:24",
+  "limits": "These tests do not validate production ingestion, user usefulness or actual lateness reduction."
+}

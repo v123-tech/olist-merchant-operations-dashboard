@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-31",
+  "url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/",
+  "method": "Actual browser UI through the documented Browser Use interface; no application state mutation through JavaScript",
+  "browsers": ["Codex in-app Chromium", "Microsoft Edge"],
+  "checks": [
+    {"name":"public_initial_page_and_full_order_list","passed":true,"observed":"No sign-in wall; default scope86288 orders/97939 item rows; full order detail buttons present"},
+    {"name":"public_category_filter","passed":true,"observed":"health_beauty:7300 orders/7986 matched item rows"},
+    {"name":"public_historical_detail","passed":true,"observed":"7e64c6b0a855acecee3ad0225a0e1da0:130.00BRL item amount,16.01BRL freight,146.01BRL payment,score5; full purchase/approval/carrier/delivery timeline and carrier-before-approval quality warning"},
+    {"name":"public_seller_and_category_combination","passed":true,"observed":"Sellerfad44952713764836814be105382aee5 observed in actual item detail; combined with health_beauty gives23 orders/23 matched item rows"},
+    {"name":"public_cross_browser_isolation","passed":true,"observed":"Edge freshly opened workbench:pending415/processing0; IAB workbench at the same default historical time:pending414/processing1. The saved disposition did not appear in Edge"},
+    {"name":"public_mobile_overview","passed":true,"observed":"390x844 viewport; document width375; default amount11474497.03BRL fits its container without overflow"},
+    {"name":"public_mobile_workbench","passed":true,"observed":"390x844 viewport; document width375; default415 tasks,145 before-deadline and270 overdue; no whole-page horizontal overflow"},
+    {"name":"public_reload_without_local_preview","passed":true,"observed":"Parent verified localhost8878 was unavailable with connection actively refused. A subsequent actual browser reload at the HTTPS workbench still loaded415 tasks and restored the saved414pending/1processing state"},
+    {"name":"public_reset","passed":true,"observed":"Clicked Reset simulated records, then explicit Confirm reset; returned to415pending/0processing/0resolved/0ignored without changing historical task counts"},
+    {"name":"viewport_restored","passed":true,"observed":"Temporary390x844 browser viewport override reset before finishing"}
+  ],
+  "screenshots": [
+    "screenshots/online-secondary/history-detail.png",
+    "screenshots/online-secondary/edge-initial-workbench.png",
+    "screenshots/online-secondary/mobile-overview.png"
+  ],
+  "related_evidence": {
+    "primary_local_and_browser_scope": "browser_qa_local.json",
+    "published_asset_integrity": "https_asset_verification.json",
+    "data_resource_failure_and_retry": "browser_qa_failure.json"
+  },
+  "limits": [
+    "This secondary pass did not repeat the public validation-page and case-page mobile viewport checks; all three business pages and case page were tested locally in browser_qa_local.json, and the published CSS/business scripts match the local release bytes",
+    "Real mobile hardware, Firefox/Safari and mainland multi-region networks remain untested",
+    "Application console entries were not re-collected during this secondary pass",
+    "https_asset_verification.json retains four actual missing-response-header failures; they are not marked passing by this browser report"
+  ]
+}

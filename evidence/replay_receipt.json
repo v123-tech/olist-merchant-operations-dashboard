@@ -1,0 +1,14 @@
+{
+  "evaluation_config_sha256": "df893db60637bbe5a233939fc45cd39231eec41ceebecc24021756fe2c7a1758",
+  "evaluation_config_file": "evaluation_config.json",
+  "database_file": "data/processed/olist.sqlite",
+  "database_sha256_at_run": "700f92d83d2f318cb29705f8a042e9961f956e1e80352bf70de68ced638c8853",
+  "replay_source_sha256": "25093180ace65bb98bb80ec4feaeca0c31a0441a61b9d7191c4d2f838b8ac60d",
+  "output_sha256": {
+    "replay_results.json": "db1b707e5244fd0869019347bdc4980bca9cc398a0c85b07cb24c5eb1c3d2d49",
+    "replay_window_rules.csv": "645c9d4102d8f0c243e653957b12c65bef44e91d1eec1040f63e161933b85c38",
+    "replay_order_first_alerts.csv": "804994acc82907465edafec40ad656c2c886f589b7b4f10c8cf59fcf190048b6",
+    "replay_group_counts.csv": "be96eed6199e1611a159f587a7e059b4b4af3bd8ee6f7f82e9f1c42c893f5426"
+  },
+  "generated_at": "2026-10-09T14:11:15"
+}

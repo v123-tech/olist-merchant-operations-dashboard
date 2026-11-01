@@ -1,0 +1,34 @@
+{
+  "checked_at_utc": "2026-10-30T15:08:29.730737+00:00",
+  "command": "python -B -m unittest discover -s tests -v",
+  "returncode": 0,
+  "before": {
+    "data\\processed\\olist.sqlite": {
+      "bytes": 176996352,
+      "sha256": "700f92d83d2f318cb29705f8a042e9961f956e1e80352bf70de68ced638c8853"
+    },
+    "data\\demo_actions.sqlite": {
+      "bytes": 24576,
+      "sha256": "8bdbecfab23b0a8fba425ecf3e2658307697ff59ae8b2f1f53a4efaba01a4645"
+    },
+    "data\\raw\\brazilian-ecommerce-v2.zip": {
+      "bytes": 44717580,
+      "sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784"
+    }
+  },
+  "after": {
+    "data\\processed\\olist.sqlite": {
+      "bytes": 176996352,
+      "sha256": "700f92d83d2f318cb29705f8a042e9961f956e1e80352bf70de68ced638c8853"
+    },
+    "data\\demo_actions.sqlite": {
+      "bytes": 24576,
+      "sha256": "8bdbecfab23b0a8fba425ecf3e2658307697ff59ae8b2f1f53a4efaba01a4645"
+    },
+    "data\\raw\\brazilian-ecommerce-v2.zip": {
+      "bytes": 44717580,
+      "sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784"
+    }
+  },
+  "source_data_unchanged": true
+}

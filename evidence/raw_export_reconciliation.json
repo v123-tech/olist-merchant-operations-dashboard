@@ -1,0 +1,75 @@
+{
+  "source_zip_sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784",
+  "method": "Direct CSV parsing; Decimal cents; calendar-day delivery; no DemoApp or exported KPI constants",
+  "checks": [
+    {
+      "name": "all_orders_unique_and_retained",
+      "passed": true,
+      "detail": {
+        "raw_rows": 99441,
+        "export_unique": 99441
+      }
+    },
+    {
+      "name": "all_order_lateness_and_regions_match_raw_csv",
+      "passed": true,
+      "detail": {
+        "compared_orders": 99441,
+        "valid_orders": 96470,
+        "late_orders": 6534
+      }
+    },
+    {
+      "name": "discovery_scope_all",
+      "passed": true,
+      "detail": {
+        "valid": 83696,
+        "late": 5930,
+        "rate": 0.07085165360351749
+      }
+    },
+    {
+      "name": "discovery_scope_RJ",
+      "passed": true,
+      "detail": {
+        "valid": 10891,
+        "late": 1436,
+        "rate": 0.13185198787990082
+      }
+    },
+    {
+      "name": "discovery_scope_SP",
+      "passed": true,
+      "detail": {
+        "valid": 34523,
+        "late": 1432,
+        "rate": 0.04147959331460186
+      }
+    },
+    {
+      "name": "raw_money_cents_price",
+      "passed": true,
+      "detail": {
+        "raw": 1359164370,
+        "export": 1359164370
+      }
+    },
+    {
+      "name": "raw_money_cents_freight_value",
+      "passed": true,
+      "detail": {
+        "raw": 225190954,
+        "export": 225190954
+      }
+    },
+    {
+      "name": "raw_money_cents_payment_value",
+      "passed": true,
+      "detail": {
+        "raw": 1600887212,
+        "export": 1600887212
+      }
+    }
+  ],
+  "passed": true
+}

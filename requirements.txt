@@ -1,0 +1,3 @@
+# Web demo has no Python or npm dependency. These are for offline rebuilding only.
+pandas==3.0.1
+

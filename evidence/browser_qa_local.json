@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-30",
+  "environment": "Local static HTTP preview; not a public deployment",
+  "browsers": ["Codex in-app Chromium", "Microsoft Edge"],
+  "viewports": [{"width":1440,"height":900},{"width":390,"height":844}],
+  "checks": [
+    {"name":"default_overview_and_order_list","passed":true,"observed":"86288 orders; BRL 11474497.03 delivered item amount; 5930/83696 late"},
+    {"name":"RJ_state_filter","passed":true,"observed":"1436/10891; 13.19%"},
+    {"name":"SP_state_filter","passed":true,"observed":"1432/34523; 4.15%"},
+    {"name":"date_filter_March_2018","passed":true,"observed":"7211 orders; 1328/7003 late;18.96%"},
+    {"name":"seller_filter_empty_result","passed":true,"observed":"Zero sample displayed with unavailable rates, not zero rates"},
+    {"name":"category_filter","passed":true,"observed":"health_beauty:7300 orders;7986 matched item rows"},
+    {"name":"seller_category_combination","passed":true,"observed":"fad44952713764836814be105382aee5 + health_beauty:23 orders/23 item rows"},
+    {"name":"historical_order_detail","passed":true,"observed":"7e64c6b0a855acecee3ad0225a0e1da0; full events, review, money and reversed event quality flag"},
+    {"name":"default_replay","passed":true,"observed":"2018-03-15 08:00:415 tasks;145 before deadline;270 overdue"},
+    {"name":"R2_filter","passed":true,"observed":"53 matched tasks; all matched rules retained"},
+    {"name":"arbitrary_replay_time","passed":true,"observed":"2018-07-15 08:00:44 tasks;20 before deadline;24 overdue"},
+    {"name":"replay_order_detail_masks_future","passed":true,"observed":"da81fbc27b55e0f3d2813cf2078dc780 shows only purchase and approval; no final status, review or future carrier/delivery event"},
+    {"name":"ignored_note_required","passed":true,"observed":"Blank ignored note rejected visibly"},
+    {"name":"save_and_reload","passed":true,"observed":"Processing note persisted after page reload;pending414/processing1"},
+    {"name":"status_filter","passed":true,"observed":"processing filter shows exactly saved order"},
+    {"name":"reset","passed":true,"observed":"Explicit reset dialog;pending415/processing0 restored"},
+    {"name":"cross_browser_isolation","passed":true,"observed":"IAB pending414/processing1 while Edge pending415/processing0 at same historical time"},
+    {"name":"rule_report_and_quality_tabs","passed":true,"observed":"Holdout5662/6512;late351;shipping hints1432/hits246;70.09% coverage;17.18% hit share;89h median"},
+    {"name":"mobile_layout","passed":true,"observed":"All three business pages and case page:document width375 at viewport390; amount text corrected to fit its130px container"},
+    {"name":"case_desktop_and_mobile","passed":true,"observed":"Project rationale, source, limitations, role and demonstration links rendered"},
+    {"name":"application_console_errors","passed":true,"observed":"No error entries returned by browser logs in IAB or Edge"}
+  ],
+  "not_yet_verified": ["Public HTTPS deployment", "Public URL reload and availability without local process", "China mainland multi-region access", "Firefox and Safari actual devices", "Real mobile hardware performance", "Browser network-failure retry injection"],
+  "screenshots": ["../docs/screenshots/overview.png","../docs/screenshots/workbench.png","../docs/screenshots/validation.png","../docs/screenshots/order-detail.png","../docs/screenshots/case.png","../docs/screenshots/mobile-case.png"]
+}

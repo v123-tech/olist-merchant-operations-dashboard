@@ -1,0 +1,23 @@
+{
+  "checked_dates_local": ["2026-10-30", "2026-10-31"],
+  "url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/",
+  "browser": "Codex in-app browser",
+  "source": "Actual browser UI actions against the public production URL; separate from local/API tests",
+  "checks": [
+    {"name":"anonymous_https_initial_load","passed":true,"observed":"No login screen; all three business pages accessible"},
+    {"name":"full_gzip_data_and_orders","passed":true,"observed":"86288 default-window orders, ten visible order-detail buttons"},
+    {"name":"default_metrics","passed":true,"observed":"BRL11474497.03 delivered item amount;late5930/83696=7.09%"},
+    {"name":"RJ_filter","passed":true,"observed":"11330 matched orders;late1436/10891=13.19%"},
+    {"name":"SP_filter","passed":true,"observed":"35591 matched orders;late1432/34523=4.15%"},
+    {"name":"date_filter_March_2018","passed":true,"observed":"7211 orders;late1328/7003=18.96%"},
+    {"name":"default_replay","passed":true,"observed":"2018-03-15 08:00:415 tasks;145 before-deadline hints;270 overdue monitors"},
+    {"name":"R2_filter","passed":true,"observed":"53 tasks;da81fbc27b55e0f3d2813cf2078dc780 first"},
+    {"name":"future_event_mask","passed":true,"observed":"Replay da81fbc27b55e0f3d2813cf2078dc780 shows only purchase and approval;future carrier/delivery,final status and review absent"},
+    {"name":"save_and_reload_persistence","passed":true,"observed":"Saved processing note, reloaded public page;pending414/processing1"},
+    {"name":"processing_filter","passed":true,"observed":"Exactly one task:da81fbc27b55e0f3d2813cf2078dc780 with processing status"},
+    {"name":"validation_highlights","passed":true,"observed":"5662 eligible,351 late,1432 shipping hints,246 hits;coverage70.09%,hit share17.18%,median89h"},
+    {"name":"full_report_and_quality_tabs","passed":true,"observed":"Exploration74561/86288,validation5057/6292,holdout5662/6512;99441 original and fact rows;quality flags visible"}
+  ],
+  "not_claimed_here": ["Cross-browser isolation", "Mobile viewport", "Reset", "Reload with local preview stopped", "Mainland multi-region access", "Browser network-failure injection on production"],
+  "screenshots": ["../docs/screenshots/online/order-detail.png"]
+}

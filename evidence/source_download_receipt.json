@@ -1,0 +1,8 @@
+{
+  "source_url": "https://www.kaggle.com/api/v1/datasets/download/olistbr/brazilian-ecommerce?datasetVersionNumber=2",
+  "dataset_ref": "olistbr/brazilian-ecommerce",
+  "dataset_version": 2,
+  "sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784",
+  "bytes": 44717580,
+  "client_research_date": "2026-10-09"
+}

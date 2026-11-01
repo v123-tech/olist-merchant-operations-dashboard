@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "source": "Olist / Kaggle dataset version 2",
+  "license": "CC BY-NC-SA 4.0",
+  "files": {
+    "orders.json.gz": {
+      "rows": 99441,
+      "bytes": 9499095,
+      "uncompressed_bytes": 38403525,
+      "sha256": "c30b3052e6cfec1479b3b378983c0fa1460f399ded4ac86076ce6073921bdebe",
+      "fields": [
+        "order_id",
+        "order_status",
+        "purchase_at",
+        "approved_at",
+        "carrier_at",
+        "delivered_at",
+        "estimated_at",
+        "customer_state",
+        "customer_city",
+        "item_count",
+        "seller_count",
+        "item_amount_cents",
+        "freight_amount_cents",
+        "payment_amount_cents",
+        "review_valid",
+        "review_score",
+        "review_answer_at",
+        "single_item_seller_id",
+        "single_product_id",
+        "single_category",
+        "promise_end_exclusive",
+        "shipping_limit_min",
+        "shipping_limit_max",
+        "timeline_valid",
+        "shipping_deadline_valid",
+        "late_valid",
+        "is_late",
+        "replay_eligible",
+        "purchase_month"
+      ]
+    },
+    "items.json.gz": {
+      "rows": 112650,
+      "bytes": 5677733,
+      "uncompressed_bytes": 17923867,
+      "sha256": "e0dbd432f638c9b0ac30c31b55cff7ea835db3d66112923e0ba4a332db1b7db7",
+      "fields": [
+        "order_id",
+        "order_item_id",
+        "product_id",
+        "seller_id",
+        "category",
+        "price_cents",
+        "freight_cents",
+        "shipping_limit_at",
+        "invalid_money_row"
+      ]
+    }
+  }
+}

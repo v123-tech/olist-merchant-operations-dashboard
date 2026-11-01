@@ -1,0 +1,13 @@
+{
+  "version_number": 1,
+  "source_commit": "92ffdeb4b0c6121ecf55503ebc8fcc9702c57ac0",
+  "status": "succeeded",
+  "access_mode": "public",
+  "url": "https://olist-merchant-workbench.luozilong888.chatgpt.site",
+  "confirmed_at_utc": "2026-10-30T15:26:08.355737+00:00",
+  "archive_sha256": "1931b0384e142fb134b8cb6ad5038e46e746a1b6941b6f6c35a6709c969035e1",
+  "archive_bytes": 15636480,
+  "archive_files": 17,
+  "scope": "Native Sites production deployment result; browser interaction checks recorded separately",
+  "public_copy_note": "Internal Site, saved-version and deployment identifiers are omitted; the full receipt remains owner-controlled."
+}

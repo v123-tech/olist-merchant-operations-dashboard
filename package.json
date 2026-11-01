@@ -1,0 +1,7 @@
+{
+  "name": "olist-merchant-operations-dashboard",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Olist historical merchant operations portfolio; buildless static web app",
+  "scripts": {"check": "node --check dist/app.js && node --check dist/static-api.js && node --check dist/data-worker.js"}
+}

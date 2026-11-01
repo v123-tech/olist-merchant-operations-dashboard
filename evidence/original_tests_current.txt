@@ -1,0 +1,31 @@
+test_01_full_scope_keeps_no_item_orders_and_money_is_not_multiplied (test_demo_api.DemoAPIIntegration.test_01_full_scope_keeps_no_item_orders_and_money_is_not_multiplied) ... ok
+test_02_seller_category_state_date_filters_match_raw_item_grain (test_demo_api.DemoAPIIntegration.test_02_seller_category_state_date_filters_match_raw_item_grain) ... ok
+test_03_end_date_is_inclusive_and_pagination_is_stable (test_demo_api.DemoAPIIntegration.test_03_end_date_is_inclusive_and_pagination_is_stable) ... ok
+test_04_denominators_match_fact_validity_and_missing_outcomes_stay_unknown (test_demo_api.DemoAPIIntegration.test_04_denominators_match_fact_validity_and_missing_outcomes_stay_unknown) ... ok
+test_05_empty_range_has_null_rates_not_zero_success_claim (test_demo_api.DemoAPIIntegration.test_05_empty_range_has_null_rates_not_zero_success_claim) ... ok
+test_06_bad_inputs_and_unknown_order_return_controlled_errors (test_demo_api.DemoAPIIntegration.test_06_bad_inputs_and_unknown_order_return_controlled_errors) ... ok
+test_07_action_persists_retries_are_idempotent_and_ignore_requires_reason (test_demo_api.DemoAPIIntegration.test_07_action_persists_retries_are_idempotent_and_ignore_requires_reason) ... ok
+test_08_replay_detail_hides_future_events_and_all_final_labels (test_demo_api.DemoAPIIntegration.test_08_replay_detail_hides_future_events_and_all_final_labels) ... ok
+test_09_queue_uses_single_deduplicated_tasks_and_persisted_action_state (test_demo_api.DemoAPIIntegration.test_09_queue_uses_single_deduplicated_tasks_and_persisted_action_state) ... ok
+test_10_meta_and_evidence_are_available (test_demo_api.DemoAPIIntegration.test_10_meta_and_evidence_are_available) ... ok
+test_event_equality_is_visible_and_suppresses_hint (test_replay.AsOfTests.test_event_equality_is_visible_and_suppresses_hint) ... ok
+test_future_events_and_final_labels_cannot_leak (test_replay.AsOfTests.test_future_events_and_final_labels_cannot_leak) ... ok
+test_not_yet_purchased_is_invisible (test_replay.AsOfTests.test_not_yet_purchased_is_invisible) ... ok
+test_static_fields_visible_only_after_approval (test_replay.AsOfTests.test_static_fields_visible_only_after_approval) ... ok
+test_analytic_first_times_equal_independent_hour_by_hour_oracle (test_replay.EvaluationTests.test_analytic_first_times_equal_independent_hour_by_hour_oracle) ... ok
+test_cutoff_is_exclusive_and_bad_outcomes_not_filled_as_normal (test_replay.EvaluationTests.test_cutoff_is_exclusive_and_bad_outcomes_not_filled_as_normal) ... ok
+test_merged_count_is_order_deduplicated_and_windows_are_exclusive (test_replay.EvaluationTests.test_merged_count_is_order_deduplicated_and_windows_are_exclusive) ... ok
+test_real_orders_equal_independent_hourly_enumeration (test_replay.EvaluationTests.test_real_orders_equal_independent_hourly_enumeration) ... ok
+test_R1_includes_24_hours_and_shipping_deadline_equality (test_replay.RuleBoundaryTests.test_R1_includes_24_hours_and_shipping_deadline_equality) ... ok
+test_R2_requires_strictly_past_deadline (test_replay.RuleBoundaryTests.test_R2_requires_strictly_past_deadline) ... ok
+test_R4_never_counts_as_advance_success (test_replay.RuleBoundaryTests.test_R4_never_counts_as_advance_success) ... ok
+test_hourly_rounding_can_remove_a_short_opportunity (test_replay.RuleBoundaryTests.test_hourly_rounding_can_remove_a_short_opportunity) ... ok
+test_known_anomaly_goes_outside_normal_rules (test_replay.RuleBoundaryTests.test_known_anomaly_goes_outside_normal_rules) ... ok
+test_multiline_orders_not_implicitly_supported (test_replay.RuleBoundaryTests.test_multiline_orders_not_implicitly_supported) ... ok
+test_overlap_deduplicates_by_order_and_priority (test_replay.RuleBoundaryTests.test_overlap_deduplicates_by_order_and_priority) ... ok
+test_same_day_delivery_is_on_time_under_date_end_boundary (test_replay.RuleBoundaryTests.test_same_day_delivery_is_on_time_under_date_end_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 21.406s
+
+OK

@@ -1,0 +1,559 @@
+{
+  "checked_at_utc": "2026-10-31T03:18:45.072511+00:00",
+  "base_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/",
+  "method": "Read-only HTTPS GET; default certificate validation; Accept-Encoding identity; streamed SHA-256; gzip JSON schema and row checks",
+  "tls_certificate_validation": true,
+  "assets": [
+    {
+      "path": "/",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/",
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 16698,
+      "sha256": "626f38a30c5ad38294dfc1d3878e5a3ea47524139301bebb4dc545572463d3f6",
+      "matches_local_release_bytes": false
+    },
+    {
+      "path": "case.html",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/case.html",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/case",
+      "headers": {
+        "content-type": "text/html",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 18748,
+      "sha256": "8cd77150fbdf6caefcefe8a9a22ff7bb6276e652603416914f1c08bc6c068822",
+      "matches_local_release_bytes": false
+    },
+    {
+      "path": "app.js",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/app.js",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/app.js",
+      "headers": {
+        "content-type": "text/javascript",
+        "content-length": "66058",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 66058,
+      "sha256": "314a78f4e3bbc27a2742f9539bb2d016b203b9fd3fb079c7a7b06ddd699c4c9f",
+      "matches_local_release_bytes": true
+    },
+    {
+      "path": "static-api.js",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/static-api.js",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/static-api.js",
+      "headers": {
+        "content-type": "text/javascript",
+        "content-length": "7032",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 7032,
+      "sha256": "8a542ca98ab4b2971d3f2de7dd14199a409517e5c1c891750637ba8d19a01f0c",
+      "matches_local_release_bytes": true
+    },
+    {
+      "path": "data-worker.js",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data-worker.js",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data-worker.js",
+      "headers": {
+        "content-type": "text/javascript",
+        "content-length": "17630",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 17630,
+      "sha256": "3a1acb1b5c8f0df57bb5ceef26fd66680e575753c27de1a77195e9488d83d508",
+      "matches_local_release_bytes": true
+    },
+    {
+      "path": "style.css",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/style.css",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/style.css",
+      "headers": {
+        "content-type": "text/css",
+        "content-length": "50940",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 50940,
+      "sha256": "52cde518fd5d42f3ba2d86215c126cce7adb0d9f71564ca1d20c7b6eb3a22348",
+      "matches_local_release_bytes": true
+    },
+    {
+      "path": "data/manifest.json",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/manifest.json",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/manifest.json",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "1607",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 1607,
+      "sha256": "0d01561a7d9ca74993c44b7b67f773d03980ae0df69832f4853ddc9f61078395",
+      "matches_local_release_bytes": true
+    },
+    {
+      "path": "data/meta.json",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/meta.json",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/meta.json",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "238949",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 238949,
+      "sha256": "babeb7fe3b8ccbeb13443460fce0c7ff8c0c8d1ee3851ada40b2eea6e42d9244",
+      "matches_local_release_bytes": true
+    },
+    {
+      "path": "data/config.json",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/config.json",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/config.json",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "950",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 950,
+      "sha256": "c65f234d18131b36c3eded8a17a416c76db8d3cef8b77ac68765889d9beb4278",
+      "matches_local_release_bytes": true
+    },
+    {
+      "path": "data/default-overview.json",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/default-overview.json",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/default-overview.json",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "6641",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 6641,
+      "sha256": "9468a8a8c27253bcdf6acfebfe716183a922fc8a2e09236bf230caa1b65bbb51",
+      "matches_local_release_bytes": true
+    },
+    {
+      "path": "data/quality_report.json",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/quality_report.json",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/quality_report.json",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "4726",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 4726,
+      "sha256": "cdd52fdda0d79bb908893c6c0dbcbd7302290ed9053dbad5f5150a9010781127",
+      "matches_local_release_bytes": true
+    },
+    {
+      "path": "data/replay_results.json",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/replay_results.json",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/replay_results.json",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "15931",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 15931,
+      "sha256": "52a734fdbaef6b144ccaebcb435dabe08ee40de684279709185219ee91dba8e5",
+      "matches_local_release_bytes": true
+    },
+    {
+      "path": "data/orders.json.gz",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/orders.json.gz",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/orders.json.gz",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "9499095",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 9499095,
+      "sha256": "c30b3052e6cfec1479b3b378983c0fa1460f399ded4ac86076ce6073921bdebe",
+      "gzip_validation": {
+        "rows": 99441,
+        "fields": [
+          "order_id",
+          "order_status",
+          "purchase_at",
+          "approved_at",
+          "carrier_at",
+          "delivered_at",
+          "estimated_at",
+          "customer_state",
+          "customer_city",
+          "item_count",
+          "seller_count",
+          "item_amount_cents",
+          "freight_amount_cents",
+          "payment_amount_cents",
+          "review_valid",
+          "review_score",
+          "review_answer_at",
+          "single_item_seller_id",
+          "single_product_id",
+          "single_category",
+          "promise_end_exclusive",
+          "shipping_limit_min",
+          "shipping_limit_max",
+          "timeline_valid",
+          "shipping_deadline_valid",
+          "late_valid",
+          "is_late",
+          "replay_eligible",
+          "purchase_month"
+        ],
+        "uncompressed_bytes": 38403525,
+        "all_column_lengths_match": true
+      }
+    },
+    {
+      "path": "data/items.json.gz",
+      "requested_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/items.json.gz",
+      "status": 200,
+      "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/items.json.gz",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "5677733",
+        "cache-control": "public, max-age=0, must-revalidate"
+      },
+      "bytes": 5677733,
+      "sha256": "e0dbd432f638c9b0ac30c31b55cff7ea835db3d66112923e0ba4a332db1b7db7",
+      "gzip_validation": {
+        "rows": 112650,
+        "fields": [
+          "order_id",
+          "order_item_id",
+          "product_id",
+          "seller_id",
+          "category",
+          "price_cents",
+          "freight_cents",
+          "shipping_limit_at",
+          "invalid_money_row"
+        ],
+        "uncompressed_bytes": 17923867,
+        "all_column_lengths_match": true
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "status_and_https:/",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/"
+      }
+    },
+    {
+      "name": "public_html_without_auth_redirect",
+      "passed": true,
+      "detail": "Business page markers present in the unauthenticated HTTPS response"
+    },
+    {
+      "name": "declared_header:x-content-type-options",
+      "passed": false,
+      "detail": {
+        "expected": "nosniff",
+        "actual": null
+      }
+    },
+    {
+      "name": "declared_header:referrer-policy",
+      "passed": false,
+      "detail": {
+        "expected": "strict-origin-when-cross-origin",
+        "actual": null
+      }
+    },
+    {
+      "name": "declared_header:content-security-policy",
+      "passed": false,
+      "detail": {
+        "actual": null
+      }
+    },
+    {
+      "name": "declared_header:permissions-policy",
+      "passed": false,
+      "detail": {
+        "actual": null
+      }
+    },
+    {
+      "name": "status_and_https:case.html",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/case"
+      }
+    },
+    {
+      "name": "status_and_https:app.js",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/app.js"
+      }
+    },
+    {
+      "name": "local_release_bytes:app.js",
+      "passed": true,
+      "detail": {
+        "sha256": "314a78f4e3bbc27a2742f9539bb2d016b203b9fd3fb079c7a7b06ddd699c4c9f"
+      }
+    },
+    {
+      "name": "javascript_mime:app.js",
+      "passed": true,
+      "detail": {
+        "content_type": "text/javascript"
+      }
+    },
+    {
+      "name": "status_and_https:static-api.js",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/static-api.js"
+      }
+    },
+    {
+      "name": "local_release_bytes:static-api.js",
+      "passed": true,
+      "detail": {
+        "sha256": "8a542ca98ab4b2971d3f2de7dd14199a409517e5c1c891750637ba8d19a01f0c"
+      }
+    },
+    {
+      "name": "javascript_mime:static-api.js",
+      "passed": true,
+      "detail": {
+        "content_type": "text/javascript"
+      }
+    },
+    {
+      "name": "status_and_https:data-worker.js",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data-worker.js"
+      }
+    },
+    {
+      "name": "local_release_bytes:data-worker.js",
+      "passed": true,
+      "detail": {
+        "sha256": "3a1acb1b5c8f0df57bb5ceef26fd66680e575753c27de1a77195e9488d83d508"
+      }
+    },
+    {
+      "name": "javascript_mime:data-worker.js",
+      "passed": true,
+      "detail": {
+        "content_type": "text/javascript"
+      }
+    },
+    {
+      "name": "status_and_https:style.css",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/style.css"
+      }
+    },
+    {
+      "name": "local_release_bytes:style.css",
+      "passed": true,
+      "detail": {
+        "sha256": "52cde518fd5d42f3ba2d86215c126cce7adb0d9f71564ca1d20c7b6eb3a22348"
+      }
+    },
+    {
+      "name": "status_and_https:data/manifest.json",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/manifest.json"
+      }
+    },
+    {
+      "name": "local_release_bytes:data/manifest.json",
+      "passed": true,
+      "detail": {
+        "sha256": "0d01561a7d9ca74993c44b7b67f773d03980ae0df69832f4853ddc9f61078395"
+      }
+    },
+    {
+      "name": "status_and_https:data/meta.json",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/meta.json"
+      }
+    },
+    {
+      "name": "local_release_bytes:data/meta.json",
+      "passed": true,
+      "detail": {
+        "sha256": "babeb7fe3b8ccbeb13443460fce0c7ff8c0c8d1ee3851ada40b2eea6e42d9244"
+      }
+    },
+    {
+      "name": "status_and_https:data/config.json",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/config.json"
+      }
+    },
+    {
+      "name": "local_release_bytes:data/config.json",
+      "passed": true,
+      "detail": {
+        "sha256": "c65f234d18131b36c3eded8a17a416c76db8d3cef8b77ac68765889d9beb4278"
+      }
+    },
+    {
+      "name": "status_and_https:data/default-overview.json",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/default-overview.json"
+      }
+    },
+    {
+      "name": "local_release_bytes:data/default-overview.json",
+      "passed": true,
+      "detail": {
+        "sha256": "9468a8a8c27253bcdf6acfebfe716183a922fc8a2e09236bf230caa1b65bbb51"
+      }
+    },
+    {
+      "name": "status_and_https:data/quality_report.json",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/quality_report.json"
+      }
+    },
+    {
+      "name": "local_release_bytes:data/quality_report.json",
+      "passed": true,
+      "detail": {
+        "sha256": "cdd52fdda0d79bb908893c6c0dbcbd7302290ed9053dbad5f5150a9010781127"
+      }
+    },
+    {
+      "name": "status_and_https:data/replay_results.json",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/replay_results.json"
+      }
+    },
+    {
+      "name": "local_release_bytes:data/replay_results.json",
+      "passed": true,
+      "detail": {
+        "sha256": "52a734fdbaef6b144ccaebcb435dabe08ee40de684279709185219ee91dba8e5"
+      }
+    },
+    {
+      "name": "status_and_https:data/orders.json.gz",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/orders.json.gz"
+      }
+    },
+    {
+      "name": "compressed_bytes_and_hash:orders.json.gz",
+      "passed": true,
+      "detail": {
+        "bytes": 9499095,
+        "expected_bytes": 9499095,
+        "sha256": "c30b3052e6cfec1479b3b378983c0fa1460f399ded4ac86076ce6073921bdebe",
+        "expected_sha256": "c30b3052e6cfec1479b3b378983c0fa1460f399ded4ac86076ce6073921bdebe"
+      }
+    },
+    {
+      "name": "gzip_not_http_auto_decoded:orders.json.gz",
+      "passed": true,
+      "detail": {
+        "content_encoding": "identity",
+        "gzip_magic_present": true,
+        "reason": "Browser DecompressionStream must receive the gzip file bytes, not an HTTP-decoded body"
+      }
+    },
+    {
+      "name": "gzip_json_integrity:orders.json.gz",
+      "passed": true,
+      "detail": {
+        "rows": 99441,
+        "uncompressed_bytes": 38403525,
+        "field_count": 29
+      }
+    },
+    {
+      "name": "status_and_https:data/items.json.gz",
+      "passed": true,
+      "detail": {
+        "status": 200,
+        "final_url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/data/items.json.gz"
+      }
+    },
+    {
+      "name": "compressed_bytes_and_hash:items.json.gz",
+      "passed": true,
+      "detail": {
+        "bytes": 5677733,
+        "expected_bytes": 5677733,
+        "sha256": "e0dbd432f638c9b0ac30c31b55cff7ea835db3d66112923e0ba4a332db1b7db7",
+        "expected_sha256": "e0dbd432f638c9b0ac30c31b55cff7ea835db3d66112923e0ba4a332db1b7db7"
+      }
+    },
+    {
+      "name": "gzip_not_http_auto_decoded:items.json.gz",
+      "passed": true,
+      "detail": {
+        "content_encoding": "identity",
+        "gzip_magic_present": true,
+        "reason": "Browser DecompressionStream must receive the gzip file bytes, not an HTTP-decoded body"
+      }
+    },
+    {
+      "name": "gzip_json_integrity:items.json.gz",
+      "passed": true,
+      "detail": {
+        "rows": 112650,
+        "uncompressed_bytes": 17923867,
+        "field_count": 9
+      }
+    }
+  ],
+  "passed": false,
+  "summary": {
+    "requests": 14,
+    "checks": 38,
+    "failed_checks": [
+      "declared_header:x-content-type-options",
+      "declared_header:referrer-policy",
+      "declared_header:content-security-policy",
+      "declared_header:permissions-policy"
+    ]
+  }
+}

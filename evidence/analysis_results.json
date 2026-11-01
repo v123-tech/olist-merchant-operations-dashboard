@@ -1,0 +1,2095 @@
+{
+  "source_sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784",
+  "analysis_window": {
+    "start": "2017-01-01",
+    "end_exclusive": "2018-07-01"
+  },
+  "query_results": {
+    "raw_status": [
+      {
+        "order_status": "delivered",
+        "orders": 96478
+      },
+      {
+        "order_status": "shipped",
+        "orders": 1107
+      },
+      {
+        "order_status": "canceled",
+        "orders": 625
+      },
+      {
+        "order_status": "unavailable",
+        "orders": 609
+      },
+      {
+        "order_status": "invoiced",
+        "orders": 314
+      },
+      {
+        "order_status": "processing",
+        "orders": 301
+      },
+      {
+        "order_status": "created",
+        "orders": 5
+      },
+      {
+        "order_status": "approved",
+        "orders": 2
+      }
+    ],
+    "monetary_reconciliation": [
+      {
+        "raw_item_cents": 1359164370,
+        "order_item_cents": 1359164370,
+        "seller_item_cents": 1359164370,
+        "raw_freight_cents": 225190954,
+        "order_freight_cents": 225190954,
+        "raw_payment_cents": 1600887212,
+        "order_payment_cents": 1600887212
+      }
+    ],
+    "primary_scope": [
+      {
+        "orders": 86288,
+        "delivered_status_orders": 83701,
+        "late_valid_orders": 83696,
+        "late_orders": 5930,
+        "delivered_item_cents": 1147449703,
+        "reviewed_late_valid_orders": 83109
+      }
+    ],
+    "monthly_lateness": [
+      {
+        "month": "2017-01",
+        "orders": 800,
+        "valid_delivered": 750,
+        "late_orders": 22,
+        "delivered_item_cents": 11179836
+      },
+      {
+        "month": "2017-02",
+        "orders": 1780,
+        "valid_delivered": 1653,
+        "late_orders": 49,
+        "delivered_item_cents": 23422340
+      },
+      {
+        "month": "2017-03",
+        "orders": 2682,
+        "valid_delivered": 2546,
+        "late_orders": 116,
+        "delivered_item_cents": 35919885
+      },
+      {
+        "month": "2017-04",
+        "orders": 2404,
+        "valid_delivered": 2303,
+        "late_orders": 151,
+        "delivered_item_cents": 34066968
+      },
+      {
+        "month": "2017-05",
+        "orders": 3700,
+        "valid_delivered": 3545,
+        "late_orders": 106,
+        "delivered_item_cents": 48933825
+      },
+      {
+        "month": "2017-06",
+        "orders": 3245,
+        "valid_delivered": 3135,
+        "late_orders": 95,
+        "delivered_item_cents": 42192337
+      },
+      {
+        "month": "2017-07",
+        "orders": 4026,
+        "valid_delivered": 3872,
+        "late_orders": 108,
+        "delivered_item_cents": 48160452
+      },
+      {
+        "month": "2017-08",
+        "orders": 4331,
+        "valid_delivered": 4193,
+        "late_orders": 122,
+        "delivered_item_cents": 55469970
+      },
+      {
+        "month": "2017-09",
+        "orders": 4285,
+        "valid_delivered": 4150,
+        "late_orders": 182,
+        "delivered_item_cents": 60739967
+      },
+      {
+        "month": "2017-10",
+        "orders": 4631,
+        "valid_delivered": 4478,
+        "late_orders": 187,
+        "delivered_item_cents": 64824765
+      },
+      {
+        "month": "2017-11",
+        "orders": 7544,
+        "valid_delivered": 7288,
+        "late_orders": 904,
+        "delivered_item_cents": 98776537
+      },
+      {
+        "month": "2017-12",
+        "orders": 5673,
+        "valid_delivered": 5513,
+        "late_orders": 411,
+        "delivered_item_cents": 72603319
+      },
+      {
+        "month": "2018-01",
+        "orders": 7269,
+        "valid_delivered": 7069,
+        "late_orders": 403,
+        "delivered_item_cents": 92464500
+      },
+      {
+        "month": "2018-02",
+        "orders": 6728,
+        "valid_delivered": 6555,
+        "late_orders": 926,
+        "delivered_item_cents": 82643713
+      },
+      {
+        "month": "2018-03",
+        "orders": 7211,
+        "valid_delivered": 7003,
+        "late_orders": 1328,
+        "delivered_item_cents": 95335625
+      },
+      {
+        "month": "2018-04",
+        "orders": 6939,
+        "valid_delivered": 6798,
+        "late_orders": 306,
+        "delivered_item_cents": 97353409
+      },
+      {
+        "month": "2018-05",
+        "orders": 6873,
+        "valid_delivered": 6749,
+        "late_orders": 443,
+        "delivered_item_cents": 97754469
+      },
+      {
+        "month": "2018-06",
+        "orders": 6167,
+        "valid_delivered": 6096,
+        "late_orders": 71,
+        "delivered_item_cents": 85607786
+      }
+    ],
+    "state_lateness": [
+      {
+        "customer_state": "AL",
+        "valid_delivered": 358,
+        "late_orders": 81,
+        "late_rate": 0.226257
+      },
+      {
+        "customer_state": "MA",
+        "valid_delivered": 645,
+        "late_orders": 116,
+        "late_rate": 0.179845
+      },
+      {
+        "customer_state": "SE",
+        "valid_delivered": 283,
+        "late_orders": 49,
+        "late_rate": 0.173145
+      },
+      {
+        "customer_state": "CE",
+        "valid_delivered": 1134,
+        "late_orders": 175,
+        "late_rate": 0.154321
+      },
+      {
+        "customer_state": "PI",
+        "valid_delivered": 423,
+        "late_orders": 64,
+        "late_rate": 0.1513
+      },
+      {
+        "customer_state": "BA",
+        "valid_delivered": 2849,
+        "late_orders": 380,
+        "late_rate": 0.13338
+      },
+      {
+        "customer_state": "RJ",
+        "valid_delivered": 10891,
+        "late_orders": 1436,
+        "late_rate": 0.131852
+      },
+      {
+        "customer_state": "PA",
+        "valid_delivered": 842,
+        "late_orders": 103,
+        "late_rate": 0.122328
+      },
+      {
+        "customer_state": "ES",
+        "valid_delivered": 1767,
+        "late_orders": 205,
+        "late_rate": 0.116016
+      },
+      {
+        "customer_state": "PB",
+        "valid_delivered": 437,
+        "late_orders": 50,
+        "late_rate": 0.114416
+      },
+      {
+        "customer_state": "RN",
+        "valid_delivered": 421,
+        "late_orders": 44,
+        "late_rate": 0.104513
+      },
+      {
+        "customer_state": "PE",
+        "valid_delivered": 1368,
+        "late_orders": 141,
+        "late_rate": 0.10307
+      },
+      {
+        "customer_state": "TO",
+        "valid_delivered": 239,
+        "late_orders": 24,
+        "late_rate": 0.100418
+      },
+      {
+        "customer_state": "MS",
+        "valid_delivered": 617,
+        "late_orders": 56,
+        "late_rate": 0.090762
+      },
+      {
+        "customer_state": "SC",
+        "valid_delivered": 3141,
+        "late_orders": 281,
+        "late_rate": 0.089462
+      },
+      {
+        "customer_state": "GO",
+        "valid_delivered": 1721,
+        "late_orders": 120,
+        "late_rate": 0.069727
+      },
+      {
+        "customer_state": "MT",
+        "valid_delivered": 799,
+        "late_orders": 53,
+        "late_rate": 0.066333
+      },
+      {
+        "customer_state": "RS",
+        "valid_delivered": 4726,
+        "late_orders": 311,
+        "late_rate": 0.065806
+      },
+      {
+        "customer_state": "DF",
+        "valid_delivered": 1766,
+        "late_orders": 106,
+        "late_rate": 0.060023
+      },
+      {
+        "customer_state": "MG",
+        "valid_delivered": 9975,
+        "late_orders": 499,
+        "late_rate": 0.050025
+      },
+      {
+        "customer_state": "PR",
+        "valid_delivered": 4262,
+        "late_orders": 183,
+        "late_rate": 0.042938
+      },
+      {
+        "customer_state": "SP",
+        "valid_delivered": 34523,
+        "late_orders": 1432,
+        "late_rate": 0.04148
+      },
+      {
+        "customer_state": "AM",
+        "valid_delivered": 123,
+        "late_orders": 4,
+        "late_rate": 0.03252
+      },
+      {
+        "customer_state": "RO",
+        "valid_delivered": 219,
+        "late_orders": 7,
+        "late_rate": 0.031963
+      }
+    ],
+    "review_lateness": [
+      {
+        "is_late": 0,
+        "reviewed_orders": 77316,
+        "low_score_orders": 7313,
+        "mean_score": 4.2771741942
+      },
+      {
+        "is_late": 1,
+        "reviewed_orders": 5793,
+        "low_score_orders": 3717,
+        "mean_score": 2.2057655791
+      }
+    ],
+    "review_timing_sensitivity": [
+      {
+        "answer_timing": "after_delivery",
+        "is_late": 0,
+        "reviewed_orders": 77147,
+        "low_score_orders": 7286,
+        "mean_score": 4.2777554539
+      },
+      {
+        "answer_timing": "after_delivery",
+        "is_late": 1,
+        "reviewed_orders": 1628,
+        "low_score_orders": 329,
+        "mean_score": 3.6787469287
+      },
+      {
+        "answer_timing": "before_delivery",
+        "is_late": 0,
+        "reviewed_orders": 169,
+        "low_score_orders": 27,
+        "mean_score": 4.0118343195
+      },
+      {
+        "answer_timing": "before_delivery",
+        "is_late": 1,
+        "reviewed_orders": 4165,
+        "low_score_orders": 3388,
+        "mean_score": 1.6300120048
+      }
+    ],
+    "single_item_category": [
+      {
+        "category": "audio",
+        "valid_delivered": 286,
+        "late_orders": 40,
+        "late_rate": 0.13986,
+        "item_cents": 4388623
+      },
+      {
+        "category": "home_confort",
+        "valid_delivered": 281,
+        "late_orders": 30,
+        "late_rate": 0.106762,
+        "item_cents": 4257651
+      },
+      {
+        "category": "books_technical",
+        "valid_delivered": 192,
+        "late_orders": 18,
+        "late_rate": 0.09375,
+        "item_cents": 1402273
+      },
+      {
+        "category": "baby",
+        "valid_delivered": 2215,
+        "late_orders": 193,
+        "late_rate": 0.087133,
+        "item_cents": 33013776
+      },
+      {
+        "category": "bed_bath_table",
+        "valid_delivered": 6942,
+        "late_orders": 584,
+        "late_rate": 0.084126,
+        "item_cents": 69073270
+      },
+      {
+        "category": "fashion_underwear_beach",
+        "valid_delivered": 107,
+        "late_orders": 9,
+        "late_rate": 0.084112,
+        "item_cents": 831527
+      },
+      {
+        "category": "construction_tools_construction",
+        "valid_delivered": 431,
+        "late_orders": 36,
+        "late_rate": 0.083527,
+        "item_cents": 8227857
+      },
+      {
+        "category": "office_furniture",
+        "valid_delivered": 939,
+        "late_orders": 78,
+        "late_rate": 0.083067,
+        "item_cents": 15997129
+      },
+      {
+        "category": "auto",
+        "valid_delivered": 2900,
+        "late_orders": 240,
+        "late_rate": 0.082759,
+        "item_cents": 42393470
+      },
+      {
+        "category": "electronics",
+        "valid_delivered": 2098,
+        "late_orders": 173,
+        "late_rate": 0.082459,
+        "item_cents": 11460835
+      },
+      {
+        "category": "watches_gifts",
+        "valid_delivered": 4335,
+        "late_orders": 353,
+        "late_rate": 0.08143,
+        "item_cents": 94082094
+      },
+      {
+        "category": "musical_instruments",
+        "valid_delivered": 506,
+        "late_orders": 41,
+        "late_rate": 0.081028,
+        "item_cents": 15853629
+      },
+      {
+        "category": "industry_commerce_and_business",
+        "valid_delivered": 178,
+        "late_orders": 14,
+        "late_rate": 0.078652,
+        "item_cents": 2611101
+      },
+      {
+        "category": "health_beauty",
+        "valid_delivered": 6597,
+        "late_orders": 506,
+        "late_rate": 0.076702,
+        "item_cents": 91300123
+      },
+      {
+        "category": "telephony",
+        "valid_delivered": 3394,
+        "late_orders": 260,
+        "late_rate": 0.076606,
+        "item_cents": 21905283
+      },
+      {
+        "category": "furniture_decor",
+        "valid_delivered": 4351,
+        "late_orders": 333,
+        "late_rate": 0.076534,
+        "item_cents": 43298640
+      },
+      {
+        "category": "food",
+        "valid_delivered": 249,
+        "late_orders": 19,
+        "late_rate": 0.076305,
+        "item_cents": 1409238
+      },
+      {
+        "category": "construction_tools_lights",
+        "valid_delivered": 120,
+        "late_orders": 9,
+        "late_rate": 0.075,
+        "item_cents": 2044853
+      },
+      {
+        "category": "unknown",
+        "valid_delivered": 1171,
+        "late_orders": 87,
+        "late_rate": 0.074295,
+        "item_cents": 14516041
+      },
+      {
+        "category": "sports_leisure",
+        "valid_delivered": 5995,
+        "late_orders": 432,
+        "late_rate": 0.07206,
+        "item_cents": 72623137
+      },
+      {
+        "category": "garden_tools",
+        "valid_delivered": 2610,
+        "late_orders": 187,
+        "late_rate": 0.071648,
+        "item_cents": 33705803
+      },
+      {
+        "category": "perfumery",
+        "valid_delivered": 2507,
+        "late_orders": 175,
+        "late_rate": 0.069805,
+        "item_cents": 31236403
+      },
+      {
+        "category": "consoles_games",
+        "valid_delivered": 848,
+        "late_orders": 59,
+        "late_rate": 0.069575,
+        "item_cents": 12242908
+      },
+      {
+        "category": "furniture_living_room",
+        "valid_delivered": 276,
+        "late_orders": 19,
+        "late_rate": 0.068841,
+        "item_cents": 4109791
+      },
+      {
+        "category": "computers_accessories",
+        "valid_delivered": 5031,
+        "late_orders": 337,
+        "late_rate": 0.066985,
+        "item_cents": 59871997
+      },
+      {
+        "category": "home_construction",
+        "valid_delivered": 302,
+        "late_orders": 20,
+        "late_rate": 0.066225,
+        "item_cents": 5248952
+      },
+      {
+        "category": "stationery",
+        "valid_delivered": 1774,
+        "late_orders": 117,
+        "late_rate": 0.065953,
+        "item_cents": 17098459
+      },
+      {
+        "category": "toys",
+        "valid_delivered": 3279,
+        "late_orders": 214,
+        "late_rate": 0.065264,
+        "item_cents": 40358799
+      },
+      {
+        "category": "home_appliances_2",
+        "valid_delivered": 187,
+        "late_orders": 12,
+        "late_rate": 0.064171,
+        "item_cents": 8752711
+      },
+      {
+        "category": "fashion_bags_accessories",
+        "valid_delivered": 1476,
+        "late_orders": 94,
+        "late_rate": 0.063686,
+        "item_cents": 11622867
+      },
+      {
+        "category": "drinks",
+        "valid_delivered": 206,
+        "late_orders": 13,
+        "late_rate": 0.063107,
+        "item_cents": 1175334
+      },
+      {
+        "category": "housewares",
+        "valid_delivered": 4088,
+        "late_orders": 249,
+        "late_rate": 0.06091,
+        "item_cents": 39666560
+      },
+      {
+        "category": "cool_stuff",
+        "valid_delivered": 3154,
+        "late_orders": 188,
+        "late_rate": 0.059607,
+        "item_cents": 54238440
+      },
+      {
+        "category": "books_general_interest",
+        "valid_delivered": 403,
+        "late_orders": 24,
+        "late_rate": 0.059553,
+        "item_cents": 3511215
+      },
+      {
+        "category": "kitchen_dining_laundry_garden_furniture",
+        "valid_delivered": 173,
+        "late_orders": 10,
+        "late_rate": 0.057803,
+        "item_cents": 3146101
+      },
+      {
+        "category": "agro_industry_and_commerce",
+        "valid_delivered": 124,
+        "late_orders": 7,
+        "late_rate": 0.056452,
+        "item_cents": 4860381
+      },
+      {
+        "category": "computers",
+        "valid_delivered": 146,
+        "late_orders": 8,
+        "late_rate": 0.054795,
+        "item_cents": 17386172
+      },
+      {
+        "category": "fixed_telephony",
+        "valid_delivered": 165,
+        "late_orders": 9,
+        "late_rate": 0.054545,
+        "item_cents": 2065097
+      },
+      {
+        "category": "pet_shop",
+        "valid_delivered": 1229,
+        "late_orders": 67,
+        "late_rate": 0.054516,
+        "item_cents": 14185430
+      },
+      {
+        "category": "fashion_shoes",
+        "valid_delivered": 206,
+        "late_orders": 11,
+        "late_rate": 0.053398,
+        "item_cents": 1941470
+      },
+      {
+        "category": "small_appliances",
+        "valid_delivered": 509,
+        "late_orders": 26,
+        "late_rate": 0.051081,
+        "item_cents": 15732864
+      },
+      {
+        "category": "air_conditioning",
+        "valid_delivered": 181,
+        "late_orders": 9,
+        "late_rate": 0.049724,
+        "item_cents": 3162885
+      },
+      {
+        "category": "art",
+        "valid_delivered": 150,
+        "late_orders": 7,
+        "late_rate": 0.046667,
+        "item_cents": 1973742
+      },
+      {
+        "category": "luggage_accessories",
+        "valid_delivered": 844,
+        "late_orders": 39,
+        "late_rate": 0.046209,
+        "item_cents": 11511539
+      },
+      {
+        "category": "market_place",
+        "valid_delivered": 230,
+        "late_orders": 10,
+        "late_rate": 0.043478,
+        "item_cents": 2247738
+      },
+      {
+        "category": "food_drink",
+        "valid_delivered": 163,
+        "late_orders": 7,
+        "late_rate": 0.042945,
+        "item_cents": 1072536
+      },
+      {
+        "category": "costruction_tools_garden",
+        "valid_delivered": 117,
+        "late_orders": 5,
+        "late_rate": 0.042735,
+        "item_cents": 1303810
+      },
+      {
+        "category": "home_appliances",
+        "valid_delivered": 601,
+        "late_orders": 25,
+        "late_rate": 0.041597,
+        "item_cents": 6692270
+      },
+      {
+        "category": "construction_tools_safety",
+        "valid_delivered": 108,
+        "late_orders": 3,
+        "late_rate": 0.027778,
+        "item_cents": 2739101
+      }
+    ],
+    "single_seller_performance": [
+      {
+        "seller_id": "4a3ca9315b744ce9f8e9374361493884",
+        "valid_delivered": 1553,
+        "late_orders": 162,
+        "late_rate": 0.104314,
+        "item_cents": 17537112
+      },
+      {
+        "seller_id": "1f50f920176fa81dab994f9023523100",
+        "valid_delivered": 1297,
+        "late_orders": 123,
+        "late_rate": 0.094834,
+        "item_cents": 9917789
+      },
+      {
+        "seller_id": "4869f7a5dfa277a7dca6462dcf3b52b2",
+        "valid_delivered": 979,
+        "late_orders": 115,
+        "late_rate": 0.117467,
+        "item_cents": 20216174
+      },
+      {
+        "seller_id": "ea8482cd71df3c1969d7b9473ff13abc",
+        "valid_delivered": 1026,
+        "late_orders": 90,
+        "late_rate": 0.087719,
+        "item_cents": 3333598
+      },
+      {
+        "seller_id": "cc419e0650a3c5ba77189a1882b7556a",
+        "valid_delivered": 1589,
+        "late_orders": 85,
+        "late_rate": 0.053493,
+        "item_cents": 9689180
+      },
+      {
+        "seller_id": "7c67e1448b00f6e969d365cea6b010ab",
+        "valid_delivered": 917,
+        "late_orders": 83,
+        "late_rate": 0.090513,
+        "item_cents": 17584910
+      },
+      {
+        "seller_id": "8b321bb669392f5163d04c59e235e066",
+        "valid_delivered": 875,
+        "late_orders": 79,
+        "late_rate": 0.090286,
+        "item_cents": 1600508
+      },
+      {
+        "seller_id": "6560211a19b47992c3666cc44a7e94c0",
+        "valid_delivered": 1415,
+        "late_orders": 79,
+        "late_rate": 0.05583,
+        "item_cents": 9292183
+      },
+      {
+        "seller_id": "da8622b14eb17ae2831f4ac5b9dab84a",
+        "valid_delivered": 1153,
+        "late_orders": 76,
+        "late_rate": 0.065915,
+        "item_cents": 14387011
+      },
+      {
+        "seller_id": "955fee9216a65b617aa5c0531780ce60",
+        "valid_delivered": 1128,
+        "late_orders": 73,
+        "late_rate": 0.064716,
+        "item_cents": 11762256
+      },
+      {
+        "seller_id": "1025f0e2d44d7041d6cf58b6550e0bfa",
+        "valid_delivered": 683,
+        "late_orders": 64,
+        "late_rate": 0.093704,
+        "item_cents": 10114170
+      },
+      {
+        "seller_id": "7d13fca15225358621be4086e1eb0964",
+        "valid_delivered": 467,
+        "late_orders": 63,
+        "late_rate": 0.134904,
+        "item_cents": 9461173
+      },
+      {
+        "seller_id": "620c87c171fb2a6dd6e8bb4dec959fc6",
+        "valid_delivered": 633,
+        "late_orders": 62,
+        "late_rate": 0.097946,
+        "item_cents": 9712270
+      },
+      {
+        "seller_id": "3d871de0142ce09b7081e2b9d1733cb1",
+        "valid_delivered": 990,
+        "late_orders": 58,
+        "late_rate": 0.058586,
+        "item_cents": 8690570
+      },
+      {
+        "seller_id": "7a67c85e85bb2ce8582c35f2203ad736",
+        "valid_delivered": 1081,
+        "late_orders": 56,
+        "late_rate": 0.051804,
+        "item_cents": 13289833
+      },
+      {
+        "seller_id": "8160255418d5aaa7dbdc9f4c64ebda44",
+        "valid_delivered": 311,
+        "late_orders": 51,
+        "late_rate": 0.163987,
+        "item_cents": 3780300
+      },
+      {
+        "seller_id": "fa1c13f2614d7b5c4749cbc52fecda94",
+        "valid_delivered": 499,
+        "late_orders": 49,
+        "late_rate": 0.098196,
+        "item_cents": 16839959
+      },
+      {
+        "seller_id": "06a2c3af7b3aee5d69171b0e14f0ee87",
+        "valid_delivered": 252,
+        "late_orders": 49,
+        "late_rate": 0.194444,
+        "item_cents": 2263341
+      },
+      {
+        "seller_id": "391fc6631aebcf3004804e51b40bcf1e",
+        "valid_delivered": 447,
+        "late_orders": 42,
+        "late_rate": 0.09396,
+        "item_cents": 3403695
+      },
+      {
+        "seller_id": "1835b56ce799e6a4dc4eddc053f04066",
+        "valid_delivered": 318,
+        "late_orders": 41,
+        "late_rate": 0.128931,
+        "item_cents": 2382800
+      },
+      {
+        "seller_id": "88460e8ebdecbfecb5f9601833981930",
+        "valid_delivered": 179,
+        "late_orders": 38,
+        "late_rate": 0.212291,
+        "item_cents": 2388990
+      },
+      {
+        "seller_id": "855668e0971d4dfd7bef1b6a4133b41b",
+        "valid_delivered": 283,
+        "late_orders": 37,
+        "late_rate": 0.130742,
+        "item_cents": 3003031
+      },
+      {
+        "seller_id": "4e922959ae960d389249c378d1c939f5",
+        "valid_delivered": 395,
+        "late_orders": 36,
+        "late_rate": 0.091139,
+        "item_cents": 4267744
+      },
+      {
+        "seller_id": "e9779976487b77c6d4ac45f75ec7afe9",
+        "valid_delivered": 524,
+        "late_orders": 35,
+        "late_rate": 0.066794,
+        "item_cents": 3592216
+      },
+      {
+        "seller_id": "a1043bafd471dff536d0c462352beb48",
+        "valid_delivered": 642,
+        "late_orders": 35,
+        "late_rate": 0.054517,
+        "item_cents": 9149670
+      },
+      {
+        "seller_id": "e5a3438891c0bfdb9394643f95273d8e",
+        "valid_delivered": 213,
+        "late_orders": 34,
+        "late_rate": 0.159624,
+        "item_cents": 747856
+      },
+      {
+        "seller_id": "218d46b86c1881d022bce9c68a7d4b15",
+        "valid_delivered": 357,
+        "late_orders": 33,
+        "late_rate": 0.092437,
+        "item_cents": 5128731
+      },
+      {
+        "seller_id": "cca3071e3e9bb7d12640c9fbe2301306",
+        "valid_delivered": 653,
+        "late_orders": 32,
+        "late_rate": 0.049005,
+        "item_cents": 5821326
+      },
+      {
+        "seller_id": "897060da8b9a21f655304d50fd935913",
+        "valid_delivered": 297,
+        "late_orders": 31,
+        "late_rate": 0.104377,
+        "item_cents": 2030761
+      },
+      {
+        "seller_id": "8581055ce74af1daba164fdbd55a40de",
+        "valid_delivered": 375,
+        "late_orders": 31,
+        "late_rate": 0.082667,
+        "item_cents": 6335962
+      },
+      {
+        "seller_id": "70a12e78e608ac31179aea7f8422044b",
+        "valid_delivered": 305,
+        "late_orders": 29,
+        "late_rate": 0.095082,
+        "item_cents": 2942753
+      },
+      {
+        "seller_id": "46dc3b2cc0980fb8ec44634e21d2718e",
+        "valid_delivered": 483,
+        "late_orders": 29,
+        "late_rate": 0.060041,
+        "item_cents": 11819658
+      },
+      {
+        "seller_id": "1900267e848ceeba8fa32d80c1a5f5a8",
+        "valid_delivered": 307,
+        "late_orders": 29,
+        "late_rate": 0.094463,
+        "item_cents": 1955209
+      },
+      {
+        "seller_id": "77530e9772f57a62c906e1c21538ab82",
+        "valid_delivered": 266,
+        "late_orders": 28,
+        "late_rate": 0.105263,
+        "item_cents": 4002340
+      },
+      {
+        "seller_id": "f7ba60f8c3f99e7ee4042fdef03b70c4",
+        "valid_delivered": 173,
+        "late_orders": 27,
+        "late_rate": 0.156069,
+        "item_cents": 5167000
+      },
+      {
+        "seller_id": "7ddcbb64b5bc1ef36ca8c151f6ec77df",
+        "valid_delivered": 324,
+        "late_orders": 27,
+        "late_rate": 0.083333,
+        "item_cents": 5426567
+      },
+      {
+        "seller_id": "c826c40d7b19f62a09e2d7c5e7295ee2",
+        "valid_delivered": 327,
+        "late_orders": 26,
+        "late_rate": 0.079511,
+        "item_cents": 4224300
+      },
+      {
+        "seller_id": "f8db351d8c4c4c22c6835c19a46f01b0",
+        "valid_delivered": 582,
+        "late_orders": 25,
+        "late_rate": 0.042955,
+        "item_cents": 4432220
+      },
+      {
+        "seller_id": "ef506c96320abeedfb894c34db06f478",
+        "valid_delivered": 295,
+        "late_orders": 25,
+        "late_rate": 0.084746,
+        "item_cents": 898696
+      },
+      {
+        "seller_id": "d2374cbcbb3ca4ab1086534108cc3ab7",
+        "valid_delivered": 435,
+        "late_orders": 25,
+        "late_rate": 0.057471,
+        "item_cents": 1663424
+      },
+      {
+        "seller_id": "7aa4334be125fcdd2ba64b3180029f14",
+        "valid_delivered": 211,
+        "late_orders": 25,
+        "late_rate": 0.118483,
+        "item_cents": 1566521
+      },
+      {
+        "seller_id": "c3867b4666c7d76867627c2f7fb22e21",
+        "valid_delivered": 220,
+        "late_orders": 24,
+        "late_rate": 0.109091,
+        "item_cents": 3349590
+      },
+      {
+        "seller_id": "4c2b230173bb36f9b240f2b8ac11786e",
+        "valid_delivered": 234,
+        "late_orders": 24,
+        "late_rate": 0.102564,
+        "item_cents": 1329278
+      },
+      {
+        "seller_id": "7142540dd4c91e2237acb7e911c4eba2",
+        "valid_delivered": 296,
+        "late_orders": 23,
+        "late_rate": 0.077703,
+        "item_cents": 3253394
+      },
+      {
+        "seller_id": "634964b17796e64304cadf1ad3050fb7",
+        "valid_delivered": 224,
+        "late_orders": 23,
+        "late_rate": 0.102679,
+        "item_cents": 3396210
+      },
+      {
+        "seller_id": "16090f2ca825584b5a147ab24aa30c86",
+        "valid_delivered": 292,
+        "late_orders": 23,
+        "late_rate": 0.078767,
+        "item_cents": 1992968
+      },
+      {
+        "seller_id": "128639473a139ac0f3e5f5ade55873a5",
+        "valid_delivered": 498,
+        "late_orders": 22,
+        "late_rate": 0.044177,
+        "item_cents": 1117275
+      },
+      {
+        "seller_id": "fe2032dab1a61af8794248c8196565c9",
+        "valid_delivered": 254,
+        "late_orders": 21,
+        "late_rate": 0.082677,
+        "item_cents": 5743041
+      },
+      {
+        "seller_id": "b2ba3715d723d245138f291a6fe42594",
+        "valid_delivered": 309,
+        "late_orders": 21,
+        "late_rate": 0.067961,
+        "item_cents": 4747078
+      },
+      {
+        "seller_id": "53e4c6e0f4312d4d2107a8c9cddf45cd",
+        "valid_delivered": 395,
+        "late_orders": 20,
+        "late_rate": 0.050633,
+        "item_cents": 2562632
+      },
+      {
+        "seller_id": "2eb70248d66e0e3ef83659f71b244378",
+        "valid_delivered": 126,
+        "late_orders": 20,
+        "late_rate": 0.15873,
+        "item_cents": 2581464
+      },
+      {
+        "seller_id": "cd68562d3f44870c08922d380acae552",
+        "valid_delivered": 122,
+        "late_orders": 19,
+        "late_rate": 0.155738,
+        "item_cents": 1811970
+      },
+      {
+        "seller_id": "2c9e548be18521d1c43cde1c582c6de8",
+        "valid_delivered": 117,
+        "late_orders": 19,
+        "late_rate": 0.162393,
+        "item_cents": 560716
+      },
+      {
+        "seller_id": "17e34d8224d27a541263c4c64b11a56b",
+        "valid_delivered": 217,
+        "late_orders": 19,
+        "late_rate": 0.087558,
+        "item_cents": 4969332
+      },
+      {
+        "seller_id": "7ad32824caee82087b3e2e5f33b1bf32",
+        "valid_delivered": 104,
+        "late_orders": 18,
+        "late_rate": 0.173077,
+        "item_cents": 1739330
+      },
+      {
+        "seller_id": "5dceca129747e92ff8ef7a997dc4f8ca",
+        "valid_delivered": 317,
+        "late_orders": 18,
+        "late_rate": 0.056782,
+        "item_cents": 10807913
+      },
+      {
+        "seller_id": "1ca7077d890b907f89be8c954a02686a",
+        "valid_delivered": 106,
+        "late_orders": 18,
+        "late_rate": 0.169811,
+        "item_cents": 1232464
+      },
+      {
+        "seller_id": "b33e7c55446eabf8fe1a42d037ac7d6d",
+        "valid_delivered": 141,
+        "late_orders": 17,
+        "late_rate": 0.120567,
+        "item_cents": 4240080
+      },
+      {
+        "seller_id": "8f2ce03f928b567e3d56181ae20ae952",
+        "valid_delivered": 126,
+        "late_orders": 17,
+        "late_rate": 0.134921,
+        "item_cents": 1789390
+      },
+      {
+        "seller_id": "7e1fb0a3ebfb01ffb3a7dae98bf3238d",
+        "valid_delivered": 148,
+        "late_orders": 17,
+        "late_rate": 0.114865,
+        "item_cents": 2484753
+      },
+      {
+        "seller_id": "37515688008a7a40ac93e3b2e4ab203f",
+        "valid_delivered": 220,
+        "late_orders": 17,
+        "late_rate": 0.077273,
+        "item_cents": 578470
+      },
+      {
+        "seller_id": "0dd184061fb0eaa7ca37932c68ab91c5",
+        "valid_delivered": 145,
+        "late_orders": 17,
+        "late_rate": 0.117241,
+        "item_cents": 1678593
+      },
+      {
+        "seller_id": "fa40cc5b934574b62717c68f3d678b6d",
+        "valid_delivered": 298,
+        "late_orders": 16,
+        "late_rate": 0.053691,
+        "item_cents": 1555309
+      },
+      {
+        "seller_id": "b499c00f28f4b7069ff6550af8c1348a",
+        "valid_delivered": 118,
+        "late_orders": 16,
+        "late_rate": 0.135593,
+        "item_cents": 842249
+      },
+      {
+        "seller_id": "92eb0f42c21942b6552362b9b114707d",
+        "valid_delivered": 294,
+        "late_orders": 16,
+        "late_rate": 0.054422,
+        "item_cents": 572475
+      },
+      {
+        "seller_id": "7d76b645482be4a332374e8223836592",
+        "valid_delivered": 161,
+        "late_orders": 16,
+        "late_rate": 0.099379,
+        "item_cents": 355298
+      },
+      {
+        "seller_id": "7040e82f899a04d1b434b795a43b4617",
+        "valid_delivered": 167,
+        "late_orders": 16,
+        "late_rate": 0.095808,
+        "item_cents": 788140
+      },
+      {
+        "seller_id": "431af27f296bc6519d890aa5a05fdb11",
+        "valid_delivered": 111,
+        "late_orders": 16,
+        "late_rate": 0.144144,
+        "item_cents": 1233930
+      },
+      {
+        "seller_id": "2138ccb85b11a4ec1e37afbd1c8eda1f",
+        "valid_delivered": 349,
+        "late_orders": 16,
+        "late_rate": 0.045845,
+        "item_cents": 1082225
+      },
+      {
+        "seller_id": "dd7ddc04e1b6c2c614352b383efe2d36",
+        "valid_delivered": 102,
+        "late_orders": 15,
+        "late_rate": 0.147059,
+        "item_cents": 797073
+      },
+      {
+        "seller_id": "a416b6a846a11724393025641d4edd5e",
+        "valid_delivered": 143,
+        "late_orders": 15,
+        "late_rate": 0.104895,
+        "item_cents": 2282913
+      },
+      {
+        "seller_id": "8b28d096634035667e8263d57ba3368c",
+        "valid_delivered": 130,
+        "late_orders": 15,
+        "late_rate": 0.115385,
+        "item_cents": 857689
+      },
+      {
+        "seller_id": "7e93a43ef30c4f03f38b393420bc753a",
+        "valid_delivered": 313,
+        "late_orders": 15,
+        "late_rate": 0.047923,
+        "item_cents": 16255452
+      },
+      {
+        "seller_id": "54a1852d1b8f10312c55e906355666ee",
+        "valid_delivered": 175,
+        "late_orders": 15,
+        "late_rate": 0.085714,
+        "item_cents": 1525269
+      },
+      {
+        "seller_id": "522620dcb18a6b31cd7bdf73665113a9",
+        "valid_delivered": 157,
+        "late_orders": 15,
+        "late_rate": 0.095541,
+        "item_cents": 5184369
+      },
+      {
+        "seller_id": "dc4a0fc896dc34b0d5bfec8438291c80",
+        "valid_delivered": 203,
+        "late_orders": 14,
+        "late_rate": 0.068966,
+        "item_cents": 2089778
+      },
+      {
+        "seller_id": "d1c281d3ae149232351cd8c8cc885f0d",
+        "valid_delivered": 187,
+        "late_orders": 14,
+        "late_rate": 0.074866,
+        "item_cents": 2340189
+      },
+      {
+        "seller_id": "59b22a78efb79a4797979612b885db36",
+        "valid_delivered": 106,
+        "late_orders": 14,
+        "late_rate": 0.132075,
+        "item_cents": 2298570
+      },
+      {
+        "seller_id": "2e90cb1677d35cfe24eef47d441b7c87",
+        "valid_delivered": 118,
+        "late_orders": 14,
+        "late_rate": 0.118644,
+        "item_cents": 1275541
+      },
+      {
+        "seller_id": "1554a68530182680ad5c8b042c3ab563",
+        "valid_delivered": 218,
+        "late_orders": 14,
+        "late_rate": 0.06422,
+        "item_cents": 2576566
+      },
+      {
+        "seller_id": "f45122a9ab94eb4f3f8953578bc0c560",
+        "valid_delivered": 175,
+        "late_orders": 13,
+        "late_rate": 0.074286,
+        "item_cents": 2081912
+      },
+      {
+        "seller_id": "d91fb3b7d041e83b64a00a3edfb37e4f",
+        "valid_delivered": 406,
+        "late_orders": 13,
+        "late_rate": 0.03202,
+        "item_cents": 3238527
+      },
+      {
+        "seller_id": "cfb1a033743668a192316f3c6d1d2671",
+        "valid_delivered": 127,
+        "late_orders": 13,
+        "late_rate": 0.102362,
+        "item_cents": 1111500
+      },
+      {
+        "seller_id": "cbd996ad3c1b7dc71fd0e5f5df9087e2",
+        "valid_delivered": 145,
+        "late_orders": 13,
+        "late_rate": 0.089655,
+        "item_cents": 741186
+      },
+      {
+        "seller_id": "a673821011d0cec28146ea42f5ab767f",
+        "valid_delivered": 106,
+        "late_orders": 13,
+        "late_rate": 0.122642,
+        "item_cents": 1127556
+      },
+      {
+        "seller_id": "9c0e69c7bf2619675bbadf47b43f655a",
+        "valid_delivered": 137,
+        "late_orders": 13,
+        "late_rate": 0.094891,
+        "item_cents": 2981561
+      },
+      {
+        "seller_id": "7299e27ed73d2ad986de7f7c77d919fa",
+        "valid_delivered": 287,
+        "late_orders": 13,
+        "late_rate": 0.045296,
+        "item_cents": 2947287
+      },
+      {
+        "seller_id": "4d6d651bd7684af3fffabd5f08d12e5a",
+        "valid_delivered": 314,
+        "late_orders": 13,
+        "late_rate": 0.041401,
+        "item_cents": 3762320
+      },
+      {
+        "seller_id": "f262cbc1c910c83959f849465454ddd3",
+        "valid_delivered": 172,
+        "late_orders": 12,
+        "late_rate": 0.069767,
+        "item_cents": 949454
+      },
+      {
+        "seller_id": "e9d99831abad74458942f21e16f33f92",
+        "valid_delivered": 126,
+        "late_orders": 12,
+        "late_rate": 0.095238,
+        "item_cents": 483252
+      },
+      {
+        "seller_id": "de722cd6dad950a92b7d4f82673f8833",
+        "valid_delivered": 284,
+        "late_orders": 12,
+        "late_rate": 0.042254,
+        "item_cents": 4549910
+      },
+      {
+        "seller_id": "de23c3b98a88888289c6f5cc1209054a",
+        "valid_delivered": 150,
+        "late_orders": 12,
+        "late_rate": 0.08,
+        "item_cents": 2448793
+      },
+      {
+        "seller_id": "76d5af76d0271110f9af36c92573f765",
+        "valid_delivered": 120,
+        "late_orders": 12,
+        "late_rate": 0.1,
+        "item_cents": 2941360
+      },
+      {
+        "seller_id": "001cca7ae9ae17fb1caed9dfb1094831",
+        "valid_delivered": 193,
+        "late_orders": 12,
+        "late_rate": 0.062176,
+        "item_cents": 2421723
+      },
+      {
+        "seller_id": "f457c46070d02cadd8a68551231220dd",
+        "valid_delivered": 169,
+        "late_orders": 11,
+        "late_rate": 0.065089,
+        "item_cents": 1634300
+      },
+      {
+        "seller_id": "edb1ef5e36e0c8cd84eb3c9b003e486d",
+        "valid_delivered": 134,
+        "late_orders": 11,
+        "late_rate": 0.08209,
+        "item_cents": 6617885
+      },
+      {
+        "seller_id": "a3e9a2c700480d9bb01fba070ba80a0e",
+        "valid_delivered": 106,
+        "late_orders": 11,
+        "late_rate": 0.103774,
+        "item_cents": 1057780
+      },
+      {
+        "seller_id": "a3a38f4affed601eb87a97788c949667",
+        "valid_delivered": 234,
+        "late_orders": 11,
+        "late_rate": 0.047009,
+        "item_cents": 2403974
+      },
+      {
+        "seller_id": "9f505651f4a6abe901a56cdc21508025",
+        "valid_delivered": 258,
+        "late_orders": 11,
+        "late_rate": 0.042636,
+        "item_cents": 1607587
+      },
+      {
+        "seller_id": "85d9eb9ddc5d00ca9336a2219c97bb13",
+        "valid_delivered": 424,
+        "late_orders": 11,
+        "late_rate": 0.025943,
+        "item_cents": 1305290
+      },
+      {
+        "seller_id": "25c5c91f63607446a97b143d2d535d31",
+        "valid_delivered": 147,
+        "late_orders": 11,
+        "late_rate": 0.07483,
+        "item_cents": 5062177
+      },
+      {
+        "seller_id": "ef0ace09169ac090589d85746e3e036f",
+        "valid_delivered": 120,
+        "late_orders": 10,
+        "late_rate": 0.083333,
+        "item_cents": 1519530
+      },
+      {
+        "seller_id": "dbc22125167c298ef99da25668e1011f",
+        "valid_delivered": 349,
+        "late_orders": 10,
+        "late_rate": 0.028653,
+        "item_cents": 2870063
+      },
+      {
+        "seller_id": "ccc4bbb5f32a6ab2b7066a4130f114e3",
+        "valid_delivered": 161,
+        "late_orders": 10,
+        "late_rate": 0.062112,
+        "item_cents": 6479203
+      },
+      {
+        "seller_id": "87142160b41353c4e5fca2360caf6f92",
+        "valid_delivered": 265,
+        "late_orders": 10,
+        "late_rate": 0.037736,
+        "item_cents": 2738398
+      },
+      {
+        "seller_id": "4b9750c8ad28220fe6702d4ecb7c898f",
+        "valid_delivered": 143,
+        "late_orders": 10,
+        "late_rate": 0.06993,
+        "item_cents": 1065875
+      },
+      {
+        "seller_id": "48436dade18ac8b2bce089ec2a041202",
+        "valid_delivered": 130,
+        "late_orders": 10,
+        "late_rate": 0.076923,
+        "item_cents": 1151033
+      },
+      {
+        "seller_id": "004c9cd9d87a3c30c522c48c4fc07416",
+        "valid_delivered": 155,
+        "late_orders": 10,
+        "late_rate": 0.064516,
+        "item_cents": 1945174
+      },
+      {
+        "seller_id": "e9bc59e7b60fc3063eb2290deda4cced",
+        "valid_delivered": 139,
+        "late_orders": 9,
+        "late_rate": 0.064748,
+        "item_cents": 2566875
+      },
+      {
+        "seller_id": "e5a38146df062edaf55c38afa99e42dc",
+        "valid_delivered": 113,
+        "late_orders": 9,
+        "late_rate": 0.079646,
+        "item_cents": 1476538
+      },
+      {
+        "seller_id": "c9c7905cffc4ef9ff9f113554423e671",
+        "valid_delivered": 108,
+        "late_orders": 9,
+        "late_rate": 0.083333,
+        "item_cents": 914824
+      },
+      {
+        "seller_id": "c003204e1ab016dfa150abc119207b24",
+        "valid_delivered": 140,
+        "late_orders": 9,
+        "late_rate": 0.064286,
+        "item_cents": 1807789
+      },
+      {
+        "seller_id": "8d956fec2e4337affcb520f56fd8cbfd",
+        "valid_delivered": 149,
+        "late_orders": 9,
+        "late_rate": 0.060403,
+        "item_cents": 799891
+      },
+      {
+        "seller_id": "850f4f8af5ea87287ac68de36e29107f",
+        "valid_delivered": 182,
+        "late_orders": 9,
+        "late_rate": 0.049451,
+        "item_cents": 4446550
+      },
+      {
+        "seller_id": "66922902710d126a0e7d26b0e3805106",
+        "valid_delivered": 122,
+        "late_orders": 9,
+        "late_rate": 0.07377,
+        "item_cents": 1170870
+      },
+      {
+        "seller_id": "53243585a1d6dc2643021fd1853d8905",
+        "valid_delivered": 264,
+        "late_orders": 9,
+        "late_rate": 0.034091,
+        "item_cents": 19278464
+      },
+      {
+        "seller_id": "4830e40640734fc1c52cd21127c341d4",
+        "valid_delivered": 174,
+        "late_orders": 9,
+        "late_rate": 0.051724,
+        "item_cents": 823093
+      },
+      {
+        "seller_id": "41b39e28db005d9731d9d485a83b4c38",
+        "valid_delivered": 174,
+        "late_orders": 9,
+        "late_rate": 0.051724,
+        "item_cents": 1544065
+      },
+      {
+        "seller_id": "1da3aeb70d7989d1e6d9b0e887f97c23",
+        "valid_delivered": 216,
+        "late_orders": 9,
+        "late_rate": 0.041667,
+        "item_cents": 757049
+      },
+      {
+        "seller_id": "1c129092bf23f28a5930387c980c0dfc",
+        "valid_delivered": 178,
+        "late_orders": 9,
+        "late_rate": 0.050562,
+        "item_cents": 843372
+      },
+      {
+        "seller_id": "0c8380b62e38e8a1e6adbeba7eb9688c",
+        "valid_delivered": 156,
+        "late_orders": 9,
+        "late_rate": 0.057692,
+        "item_cents": 1539730
+      },
+      {
+        "seller_id": "0be8ff43f22e456b4e0371b2245e4d01",
+        "valid_delivered": 129,
+        "late_orders": 9,
+        "late_rate": 0.069767,
+        "item_cents": 945800
+      },
+      {
+        "seller_id": "0241d4d5d36f10f80c644447315af0bd",
+        "valid_delivered": 166,
+        "late_orders": 9,
+        "late_rate": 0.054217,
+        "item_cents": 2173940
+      },
+      {
+        "seller_id": "00ee68308b45bc5e2660cd833c3f81cc",
+        "valid_delivered": 129,
+        "late_orders": 9,
+        "late_rate": 0.069767,
+        "item_cents": 1925600
+      },
+      {
+        "seller_id": "ceaec5548eefc6e23e6607c5435102e7",
+        "valid_delivered": 160,
+        "late_orders": 8,
+        "late_rate": 0.05,
+        "item_cents": 4101412
+      },
+      {
+        "seller_id": "813348c996469b40f2e028d5429d3495",
+        "valid_delivered": 170,
+        "late_orders": 8,
+        "late_rate": 0.047059,
+        "item_cents": 1069473
+      },
+      {
+        "seller_id": "6a8b085f816a1f75f92dbac6eb545f8f",
+        "valid_delivered": 106,
+        "late_orders": 8,
+        "late_rate": 0.075472,
+        "item_cents": 515558
+      },
+      {
+        "seller_id": "562fc2f2c2863ab7e79a9e4388a58a14",
+        "valid_delivered": 215,
+        "late_orders": 8,
+        "late_rate": 0.037209,
+        "item_cents": 699268
+      },
+      {
+        "seller_id": "3c7c4a49ec3c6550809089c6a2ca9370",
+        "valid_delivered": 132,
+        "late_orders": 8,
+        "late_rate": 0.060606,
+        "item_cents": 371499
+      },
+      {
+        "seller_id": "2e1c9f22be269ef4643f826c9e650a52",
+        "valid_delivered": 147,
+        "late_orders": 8,
+        "late_rate": 0.054422,
+        "item_cents": 1131588
+      },
+      {
+        "seller_id": "7178f9f4dd81dcef02f62acdf8151e01",
+        "valid_delivered": 198,
+        "late_orders": 7,
+        "late_rate": 0.035354,
+        "item_cents": 3564400
+      },
+      {
+        "seller_id": "6d66611d7c44cc30ce351abc49a68421",
+        "valid_delivered": 129,
+        "late_orders": 7,
+        "late_rate": 0.054264,
+        "item_cents": 1133130
+      },
+      {
+        "seller_id": "669ae81880e08f269a64487cfb287169",
+        "valid_delivered": 155,
+        "late_orders": 7,
+        "late_rate": 0.045161,
+        "item_cents": 1272088
+      },
+      {
+        "seller_id": "59fb871bf6f4522a87ba567b42dafecf",
+        "valid_delivered": 122,
+        "late_orders": 7,
+        "late_rate": 0.057377,
+        "item_cents": 2106861
+      },
+      {
+        "seller_id": "5656537e588803a555b8eb41f07a944b",
+        "valid_delivered": 122,
+        "late_orders": 7,
+        "late_rate": 0.057377,
+        "item_cents": 591917
+      },
+      {
+        "seller_id": "37be5a7c751166fbc5f8ccba4119e043",
+        "valid_delivered": 269,
+        "late_orders": 7,
+        "late_rate": 0.026022,
+        "item_cents": 5473555
+      },
+      {
+        "seller_id": "17a053fcb14bd219540cbde0df490be0",
+        "valid_delivered": 107,
+        "late_orders": 7,
+        "late_rate": 0.065421,
+        "item_cents": 3480710
+      },
+      {
+        "seller_id": "f4aba7c0bca51484c30ab7bdc34bcdd1",
+        "valid_delivered": 106,
+        "late_orders": 6,
+        "late_rate": 0.056604,
+        "item_cents": 287730
+      },
+      {
+        "seller_id": "dd2bdf855a9172734fbc3744021ae9b9",
+        "valid_delivered": 103,
+        "late_orders": 6,
+        "late_rate": 0.058252,
+        "item_cents": 1026720
+      },
+      {
+        "seller_id": "c70c1b0d8ca86052f45a432a38b73958",
+        "valid_delivered": 154,
+        "late_orders": 6,
+        "late_rate": 0.038961,
+        "item_cents": 2213944
+      },
+      {
+        "seller_id": "bfd27a966d91cfaafdb25d076585f0da",
+        "valid_delivered": 112,
+        "late_orders": 6,
+        "late_rate": 0.053571,
+        "item_cents": 1885600
+      },
+      {
+        "seller_id": "9b013e03b2ab786505a1d3b5c0756754",
+        "valid_delivered": 135,
+        "late_orders": 6,
+        "late_rate": 0.044444,
+        "item_cents": 693815
+      },
+      {
+        "seller_id": "95e03ca3d4146e4011985981aeb959b9",
+        "valid_delivered": 164,
+        "late_orders": 6,
+        "late_rate": 0.036585,
+        "item_cents": 1037377
+      },
+      {
+        "seller_id": "7008613ea464bad5cb9b83456e1e6a8f",
+        "valid_delivered": 120,
+        "late_orders": 6,
+        "late_rate": 0.05,
+        "item_cents": 737090
+      },
+      {
+        "seller_id": "2528513dd95219a6013d4d05176e391a",
+        "valid_delivered": 133,
+        "late_orders": 6,
+        "late_rate": 0.045113,
+        "item_cents": 2810150
+      },
+      {
+        "seller_id": "1a3df491d1c4f1589fc2b934ada68bf2",
+        "valid_delivered": 158,
+        "late_orders": 6,
+        "late_rate": 0.037975,
+        "item_cents": 2229440
+      },
+      {
+        "seller_id": "0b90b6df587eb83608a64ea8b390cf07",
+        "valid_delivered": 150,
+        "late_orders": 6,
+        "late_rate": 0.04,
+        "item_cents": 2672602
+      },
+      {
+        "seller_id": "0adac9fbd9a2b63cccaac4f8756c1ca8",
+        "valid_delivered": 101,
+        "late_orders": 6,
+        "late_rate": 0.059406,
+        "item_cents": 1427799
+      },
+      {
+        "seller_id": "01fdefa7697d26ad920e9e0346d4bd1b",
+        "valid_delivered": 103,
+        "late_orders": 6,
+        "late_rate": 0.058252,
+        "item_cents": 1230646
+      },
+      {
+        "seller_id": "db4350fd57ae30082dec7acbaacc17f9",
+        "valid_delivered": 124,
+        "late_orders": 5,
+        "late_rate": 0.040323,
+        "item_cents": 290649
+      },
+      {
+        "seller_id": "aafe36600ce604f205b86b5084d3d767",
+        "valid_delivered": 116,
+        "late_orders": 5,
+        "late_rate": 0.043103,
+        "item_cents": 845690
+      },
+      {
+        "seller_id": "710e3548e02bc1d2831dfc4f1b5b14d4",
+        "valid_delivered": 117,
+        "late_orders": 5,
+        "late_rate": 0.042735,
+        "item_cents": 1978263
+      },
+      {
+        "seller_id": "6edacfd9f9074789dad6d62ba7950b9c",
+        "valid_delivered": 179,
+        "late_orders": 5,
+        "late_rate": 0.027933,
+        "item_cents": 1156710
+      },
+      {
+        "seller_id": "44073f8b7e41514de3b7815dd0237f4f",
+        "valid_delivered": 139,
+        "late_orders": 5,
+        "late_rate": 0.035971,
+        "item_cents": 1801215
+      },
+      {
+        "seller_id": "1c68394e931a64f90ea236c5ea590300",
+        "valid_delivered": 127,
+        "late_orders": 5,
+        "late_rate": 0.03937,
+        "item_cents": 2290728
+      },
+      {
+        "seller_id": "1b4c3a6f53068f0b6944d2d005c9fc89",
+        "valid_delivered": 100,
+        "late_orders": 5,
+        "late_rate": 0.05,
+        "item_cents": 1305627
+      },
+      {
+        "seller_id": "0db783cfcd3b73998abc6e10e59a102f",
+        "valid_delivered": 128,
+        "late_orders": 5,
+        "late_rate": 0.039063,
+        "item_cents": 880940
+      },
+      {
+        "seller_id": "dbb9b48c841a0e39e21f98e1a6b2ec3e",
+        "valid_delivered": 103,
+        "late_orders": 4,
+        "late_rate": 0.038835,
+        "item_cents": 669917
+      },
+      {
+        "seller_id": "c3cfdc648177fdbbbb35635a37472c53",
+        "valid_delivered": 248,
+        "late_orders": 4,
+        "late_rate": 0.016129,
+        "item_cents": 3904195
+      },
+      {
+        "seller_id": "8a32e327fe2c1b3511609d81aaf9f042",
+        "valid_delivered": 123,
+        "late_orders": 4,
+        "late_rate": 0.03252,
+        "item_cents": 590116
+      },
+      {
+        "seller_id": "86ccac0b835037332a596a33b6949ee1",
+        "valid_delivered": 168,
+        "late_orders": 4,
+        "late_rate": 0.02381,
+        "item_cents": 1528910
+      },
+      {
+        "seller_id": "7722b1df1b0e383e000397b2c11e3e19",
+        "valid_delivered": 118,
+        "late_orders": 4,
+        "late_rate": 0.033898,
+        "item_cents": 638820
+      },
+      {
+        "seller_id": "5a8e7d5003a1f221f9e1d6e411de7c23",
+        "valid_delivered": 113,
+        "late_orders": 4,
+        "late_rate": 0.035398,
+        "item_cents": 899540
+      },
+      {
+        "seller_id": "537eb890efff034a88679788b647c564",
+        "valid_delivered": 117,
+        "late_orders": 4,
+        "late_rate": 0.034188,
+        "item_cents": 345350
+      },
+      {
+        "seller_id": "36a968b544695394e4e9d7572688598f",
+        "valid_delivered": 127,
+        "late_orders": 4,
+        "late_rate": 0.031496,
+        "item_cents": 650287
+      },
+      {
+        "seller_id": "2a84855fd20af891be03bc5924d2b453",
+        "valid_delivered": 127,
+        "late_orders": 4,
+        "late_rate": 0.031496,
+        "item_cents": 1286580
+      },
+      {
+        "seller_id": "e26901d5ab434ce92fd9b5c256820a4e",
+        "valid_delivered": 196,
+        "late_orders": 3,
+        "late_rate": 0.015306,
+        "item_cents": 1156860
+      },
+      {
+        "seller_id": "5cf13accae3222c70a9cac40818ae839",
+        "valid_delivered": 122,
+        "late_orders": 3,
+        "late_rate": 0.02459,
+        "item_cents": 1177760
+      },
+      {
+        "seller_id": "25e6ffe976bd75618accfe16cefcbd0d",
+        "valid_delivered": 102,
+        "late_orders": 3,
+        "late_rate": 0.029412,
+        "item_cents": 1130924
+      },
+      {
+        "seller_id": "d98eec89afa3380e14463da2aabaea72",
+        "valid_delivered": 153,
+        "late_orders": 2,
+        "late_rate": 0.013072,
+        "item_cents": 635867
+      },
+      {
+        "seller_id": "cab85505710c7cb9b720bceb52b01cee",
+        "valid_delivered": 166,
+        "late_orders": 2,
+        "late_rate": 0.012048,
+        "item_cents": 926810
+      },
+      {
+        "seller_id": "b76dba6c951ab00dc4edf0a1aa88037e",
+        "valid_delivered": 142,
+        "late_orders": 2,
+        "late_rate": 0.014085,
+        "item_cents": 215050
+      },
+      {
+        "seller_id": "b4ffb71f0cb1b1c3d63fad021ecf93e1",
+        "valid_delivered": 119,
+        "late_orders": 2,
+        "late_rate": 0.016807,
+        "item_cents": 531652
+      },
+      {
+        "seller_id": "6cd68b3ed6d59aaa9fece558ad360c0a",
+        "valid_delivered": 145,
+        "late_orders": 2,
+        "late_rate": 0.013793,
+        "item_cents": 1097387
+      },
+      {
+        "seller_id": "6c7d50c24b3ccd2fd83b44d8bb34e073",
+        "valid_delivered": 101,
+        "late_orders": 2,
+        "late_rate": 0.019802,
+        "item_cents": 756778
+      },
+      {
+        "seller_id": "259f7b5e6e482c230e5bfaa670b6bb8f",
+        "valid_delivered": 130,
+        "late_orders": 2,
+        "late_rate": 0.015385,
+        "item_cents": 801874
+      },
+      {
+        "seller_id": "229c3efbfb0ea2058de4ccdfbc3d784a",
+        "valid_delivered": 112,
+        "late_orders": 2,
+        "late_rate": 0.017857,
+        "item_cents": 1477600
+      },
+      {
+        "seller_id": "0ea22c1cfbdc755f86b9b54b39c16043",
+        "valid_delivered": 210,
+        "late_orders": 2,
+        "late_rate": 0.009524,
+        "item_cents": 951480
+      },
+      {
+        "seller_id": "12b9676b00f60f3b700e83af21824c0e",
+        "valid_delivered": 126,
+        "late_orders": 1,
+        "late_rate": 0.007937,
+        "item_cents": 2505300
+      },
+      {
+        "seller_id": "0bae85eb84b9fb3bd773911e89288d54",
+        "valid_delivered": 125,
+        "late_orders": 1,
+        "late_rate": 0.008,
+        "item_cents": 696891
+      },
+      {
+        "seller_id": "fc906263ca5083d09dce42fe02247800",
+        "valid_delivered": 111,
+        "late_orders": 0,
+        "late_rate": 0.0,
+        "item_cents": 437800
+      }
+    ],
+    "stage_means": [
+      {
+        "is_late": 0,
+        "sequential_valid_orders": 77048,
+        "mean_approval_hours": 9.5121213399,
+        "mean_handoff_hours": 64.452019203,
+        "mean_transit_hours": 201.4757655798,
+        "mean_total_hours": 275.4399061227
+      },
+      {
+        "is_late": 1,
+        "sequential_valid_orders": 5913,
+        "mean_approval_hours": 12.1447890712,
+        "mean_handoff_hours": 131.53793985,
+        "mean_transit_hours": 710.6981163444,
+        "mean_total_hours": 854.3808452656
+      }
+    ],
+    "payment_difference": [
+      {
+        "comparable_orders": 98665,
+        "exact_matches": 98089,
+        "within_one_cent": 98362,
+        "net_difference_cents": 287039
+      }
+    ]
+  },
+  "stage_quantiles": [
+    {
+      "is_late": 0,
+      "orders": 77048,
+      "approval_hours_p50": 0.3377777777777778,
+      "approval_hours_p90": 33.31911111111115,
+      "handoff_hours_p50": 44.473194444444445,
+      "handoff_hours_p90": 138.30522222222223,
+      "transit_hours_p50": 170.81111111111113,
+      "transit_hours_p90": 385.15966666666674,
+      "total_delivery_hours_p50": 246.1413888888889,
+      "total_delivery_hours_p90": 484.15227777777784
+    },
+    {
+      "is_late": 1,
+      "orders": 5913,
+      "approval_hours_p50": 0.4008333333333333,
+      "approval_hours_p90": 38.146,
+      "handoff_hours_p50": 72.48277777777778,
+      "handoff_hours_p90": 331.25988888888895,
+      "transit_hours_p50": 661.6391666666667,
+      "transit_hours_p90": 1096.9147222222223,
+      "total_delivery_hours_p50": 778.3463888888889,
+      "total_delivery_hours_p90": 1216.5831111111113
+    }
+  ],
+  "replay_waterfall_all_dates": [
+    {
+      "step": "all_orders",
+      "retained": 99441,
+      "excluded_at_step": 0
+    },
+    {
+      "step": "final_delivered",
+      "retained": 96478,
+      "excluded_at_step": 2963
+    },
+    {
+      "step": "one_item_row",
+      "retained": 86843,
+      "excluded_at_step": 9635
+    },
+    {
+      "step": "all_timestamps_available",
+      "retained": 86821,
+      "excluded_at_step": 22
+    },
+    {
+      "step": "sequential_events",
+      "retained": 85606,
+      "excluded_at_step": 1215
+    },
+    {
+      "step": "shipping_and_promise_consistent",
+      "retained": 85517,
+      "excluded_at_step": 89
+    },
+    {
+      "step": "valid_lateness_outcome",
+      "retained": 85517,
+      "excluded_at_step": 0
+    },
+    {
+      "step": "observed_before_analyst_C",
+      "retained": 85514,
+      "excluded_at_step": 3
+    }
+  ],
+  "notes": [
+    "Descriptive historical analysis; no deployed product or causal impact.",
+    "Reviews are selected at final observation and must not be replay trigger features.",
+    "Seller/category descriptive outcomes have order-level event limitations."
+  ]
+}

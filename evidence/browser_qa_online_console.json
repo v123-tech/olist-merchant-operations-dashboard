@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-01",
+  "site": "https://olist-merchant-workbench.luozilong888.chatgpt.site/",
+  "method": "Real browser UI via cua_repl; dev.logs levels error and warn, limit 100, read after visible results rendered.",
+  "in_app_browser": {
+    "checks": [
+      "Default overview: 86288 orders; late 5930 / 83696 = 7.09%.",
+      "Click RJ region: 11330 matching orders; late 1436 / 10891 = 13.19%.",
+      "Open workbench: default replay rendered and 415 tasks present.",
+      "Open validation: R1-R4 and frozen holdout results rendered."
+    ],
+    "console_error_warn_entries_after_overview_filter": [],
+    "console_error_warn_entries_after_workbench": [],
+    "console_error_warn_entries_after_validation": [],
+    "result": "No errors or warnings captured in this tested session. This is bounded observation, not proof that every possible operation is error-free."
+  },
+  "edge": {
+    "checks": ["Default overview and RJ filter rendered with the same checked metrics."],
+    "console_entries": [
+      {
+        "level": "error",
+        "message": "Uncaught (in promise)",
+        "timestamp": "2026-11-01T09:14:06.364Z",
+        "url": "https://olist-merchant-workbench.luozilong888.chatgpt.site/"
+      }
+    ],
+    "context": "The same Edge log also contained Vue development notices from a chrome-extension URL. The error entry itself supplied no stack or reason; its origin is not established.",
+    "result": "One unspecified asynchronous error captured; not reproduced during the matching in-app-browser flow. Do not report Edge as console-error-free or claim extension causation as proven."
+  },
+  "application_source_changes": false
+}

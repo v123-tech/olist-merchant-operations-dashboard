@@ -1,0 +1,268 @@
+{
+  "source_sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784",
+  "source_version": 2,
+  "raw_rows": {
+    "orders": 99441,
+    "items": 112650,
+    "payments": 103886,
+    "reviews": 99224,
+    "customers": 99441,
+    "products": 32951,
+    "sellers": 3095,
+    "categories": 71
+  },
+  "null_cells": {
+    "orders": {
+      "order_id": 0,
+      "customer_id": 0,
+      "order_status": 0,
+      "order_purchase_timestamp": 0,
+      "order_approved_at": 160,
+      "order_delivered_carrier_date": 1783,
+      "order_delivered_customer_date": 2965,
+      "order_estimated_delivery_date": 0
+    },
+    "items": {
+      "order_id": 0,
+      "order_item_id": 0,
+      "product_id": 0,
+      "seller_id": 0,
+      "shipping_limit_date": 0,
+      "price": 0,
+      "freight_value": 0
+    },
+    "payments": {
+      "order_id": 0,
+      "payment_sequential": 0,
+      "payment_type": 0,
+      "payment_installments": 0,
+      "payment_value": 0
+    },
+    "reviews": {
+      "review_id": 0,
+      "order_id": 0,
+      "review_score": 0,
+      "review_comment_title": 87656,
+      "review_comment_message": 58247,
+      "review_creation_date": 0,
+      "review_answer_timestamp": 0
+    },
+    "customers": {
+      "customer_id": 0,
+      "customer_unique_id": 0,
+      "customer_zip_code_prefix": 0,
+      "customer_city": 0,
+      "customer_state": 0
+    },
+    "products": {
+      "product_id": 0,
+      "product_category_name": 610,
+      "product_name_lenght": 610,
+      "product_description_lenght": 610,
+      "product_photos_qty": 610,
+      "product_weight_g": 2,
+      "product_length_cm": 2,
+      "product_height_cm": 2,
+      "product_width_cm": 2
+    },
+    "sellers": {
+      "seller_id": 0,
+      "seller_zip_code_prefix": 0,
+      "seller_city": 0,
+      "seller_state": 0
+    },
+    "categories": {
+      "product_category_name": 0,
+      "product_category_name_english": 0
+    }
+  },
+  "key_checks": {
+    "orders": {
+      "columns": [
+        "order_id"
+      ],
+      "duplicate_rows": 0,
+      "null_key_rows": 0
+    },
+    "customers": {
+      "columns": [
+        "customer_id"
+      ],
+      "duplicate_rows": 0,
+      "null_key_rows": 0
+    },
+    "products": {
+      "columns": [
+        "product_id"
+      ],
+      "duplicate_rows": 0,
+      "null_key_rows": 0
+    },
+    "sellers": {
+      "columns": [
+        "seller_id"
+      ],
+      "duplicate_rows": 0,
+      "null_key_rows": 0
+    },
+    "items": {
+      "columns": [
+        "order_id",
+        "order_item_id"
+      ],
+      "duplicate_rows": 0,
+      "null_key_rows": 0
+    },
+    "payments": {
+      "columns": [
+        "order_id",
+        "payment_sequential"
+      ],
+      "duplicate_rows": 0,
+      "null_key_rows": 0
+    },
+    "categories": {
+      "columns": [
+        "product_category_name"
+      ],
+      "duplicate_rows": 0,
+      "null_key_rows": 0
+    }
+  },
+  "foreign_key_checks": {
+    "orders.customer_id->customers.customer_id": {
+      "null_rows": 0,
+      "non_null_unmatched_rows": 0
+    },
+    "items.order_id->orders.order_id": {
+      "null_rows": 0,
+      "non_null_unmatched_rows": 0
+    },
+    "payments.order_id->orders.order_id": {
+      "null_rows": 0,
+      "non_null_unmatched_rows": 0
+    },
+    "reviews.order_id->orders.order_id": {
+      "null_rows": 0,
+      "non_null_unmatched_rows": 0
+    },
+    "items.product_id->products.product_id": {
+      "null_rows": 0,
+      "non_null_unmatched_rows": 0
+    },
+    "items.seller_id->sellers.seller_id": {
+      "null_rows": 0,
+      "non_null_unmatched_rows": 0
+    },
+    "products.product_category_name->categories.product_category_name": {
+      "null_rows": 610,
+      "non_null_unmatched_rows": 13
+    }
+  },
+  "monetary_checks": {
+    "price": {
+      "invalid_or_missing_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 0
+    },
+    "freight_value": {
+      "invalid_or_missing_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 383
+    },
+    "payment_value": {
+      "invalid_or_missing_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 9
+    }
+  },
+  "review_checks": {
+    "exact_duplicate_rows": 0,
+    "order_id_repeated_rows_after_first": 551,
+    "review_id_repeated_rows_after_first": 814,
+    "invalid_score_rows": 0,
+    "invalid_answer_record_rows": 64,
+    "answer_before_purchase_rows": 63,
+    "creation_date_before_purchase_date_rows": 64,
+    "selection": "Latest valid survey answer per order (score 1-5, answer>=purchase, creation date>=purchase date); then latest creation, lexical review_id, raw row number. Descriptive final-state choice only."
+  },
+  "order_flags": {
+    "no_item_records": 775,
+    "no_payment_records": 1,
+    "multiple_sellers": 1278,
+    "approval_before_purchase": 0,
+    "carrier_before_approval": 1359,
+    "delivery_before_carrier": 23,
+    "delivery_before_purchase": 0,
+    "shipping_before_approval": 116,
+    "shipping_after_promise": 104,
+    "shipping_after_2018": 3,
+    "delivered_status_missing_delivery_event": 8,
+    "review_answer_before_purchase": 63,
+    "invalid_review_record": 64
+  },
+  "missing_timestamps_by_status": {
+    "approved": {
+      "purchase_at": 0,
+      "approved_at": 0,
+      "carrier_at": 2,
+      "delivered_at": 2,
+      "estimated_at": 0
+    },
+    "canceled": {
+      "purchase_at": 0,
+      "approved_at": 141,
+      "carrier_at": 550,
+      "delivered_at": 619,
+      "estimated_at": 0
+    },
+    "created": {
+      "purchase_at": 0,
+      "approved_at": 5,
+      "carrier_at": 5,
+      "delivered_at": 5,
+      "estimated_at": 0
+    },
+    "delivered": {
+      "purchase_at": 0,
+      "approved_at": 14,
+      "carrier_at": 2,
+      "delivered_at": 8,
+      "estimated_at": 0
+    },
+    "invoiced": {
+      "purchase_at": 0,
+      "approved_at": 0,
+      "carrier_at": 314,
+      "delivered_at": 314,
+      "estimated_at": 0
+    },
+    "processing": {
+      "purchase_at": 0,
+      "approved_at": 0,
+      "carrier_at": 301,
+      "delivered_at": 301,
+      "estimated_at": 0
+    },
+    "shipped": {
+      "purchase_at": 0,
+      "approved_at": 0,
+      "carrier_at": 0,
+      "delivered_at": 1107,
+      "estimated_at": 0
+    },
+    "unavailable": {
+      "purchase_at": 0,
+      "approved_at": 0,
+      "carrier_at": 609,
+      "delivered_at": 609,
+      "estimated_at": 0
+    }
+  },
+  "processing_policy": "Raw files unchanged; all 99,441 orders retained. Quality flags affect metric-specific eligibility only.",
+  "fact_rows": {
+    "orders": 99441,
+    "order_sellers": 100010
+  },
+  "aggregate_reconciliation_passed": true
+}

@@ -1,0 +1,60 @@
+{
+  "source_sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784",
+  "checks": [
+    {
+      "check": "raw_zip_hash_matches_receipt",
+      "passed": true,
+      "detail": {
+        "sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784"
+      }
+    },
+    {
+      "check": "all_orders_retained_once",
+      "passed": true,
+      "detail": {
+        "rows": 99441,
+        "unique": 99441
+      }
+    },
+    {
+      "check": "raw_decimal_cents_match_order_fact",
+      "passed": true,
+      "detail": {
+        "price": 1359164370,
+        "freight_value": 225190954,
+        "payment_value": 1600887212
+      }
+    },
+    {
+      "check": "seller_amounts_match_order_fact",
+      "passed": true,
+      "detail": {
+        "item_cents": 1359164370,
+        "freight_cents": 225190954
+      }
+    },
+    {
+      "check": "replay_scope_constraints",
+      "passed": true,
+      "detail": {
+        "invalid_eligible_orders": 0
+      }
+    },
+    {
+      "check": "date_based_lateness_from_raw",
+      "passed": true,
+      "detail": {
+        "valid_orders": 96470,
+        "late_orders": 6534
+      }
+    },
+    {
+      "check": "same_day_delivery_is_on_time",
+      "passed": true,
+      "detail": {
+        "incorrect_same_day_labels": 0
+      }
+    }
+  ],
+  "passed": true
+}

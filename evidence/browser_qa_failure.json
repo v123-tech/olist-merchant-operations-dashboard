@@ -1,0 +1,22 @@
+{
+  "scenario": "Isolated local static-resource failure followed by recovery on the same page",
+  "fixture_url": "http://127.0.0.1:8878/.qa-failure/",
+  "provenance": "The previous failure_browser_qa agent performed and reported this actual browser run before the user pause. This resumed pass reviewed the retained screenshots and cleaned the disposable fixture; it did not claim a fresh rerun of the failure injection",
+  "prior_browser_run_result": {
+    "reported_passed": true,
+    "failure_injection": "Shipped HTML/JS/CSS/metadata/default overview in an isolated directory; orders.json.gz and items.json.gz initially absent",
+    "observed_error": "Visible order-list failure: 暂时无法读取 / 数据资源读取失败，请检查网络后重试。 / 重新读取",
+    "truthful_default_metrics": "Default KPI summary remained visible and unchanged while detailed data failed",
+    "recovery": "Copied the exact reviewed gzip files into fixture data, clicked the existing page retry without reloading; restored86288 orders and10 visible detail buttons"
+  },
+  "retained_screenshots": ["screenshots/data-resource-failure.png", "screenshots/data-resource-recovered.png"],
+  "screenshot_limit": "The failure screenshot shows the preserved KPI area; its viewport does not include the below-fold error. It alone is not independent proof of the reported error text. The recovered screenshot visibly shows the order table and86288 total",
+  "cleanup": {
+    "performed_date": "2026-10-31",
+    "verified_absolute_target": "dist/.qa-failure",
+    "resolved_path_checked_inside_checkout_dist": true,
+    "only_disposable_fixture_deleted": true,
+    "exists_after_cleanup": false
+  },
+  "scope": "This injected-failure test is local and isolated. Healthy full data loading was separately verified on the actual public HTTPS site; the public site was not intentionally broken for this test"
+}

@@ -1,0 +1,23 @@
+{
+  "version": "rules-v1",
+  "frozen_before_holdout_evaluation": true,
+  "research_date": "2026-10-09",
+  "exploration_start": "2017-01-01",
+  "exploration_end_exclusive": "2018-07-01",
+  "validation_start": "2018-07-01",
+  "validation_end_exclusive": "2018-08-01",
+  "holdout_start": "2018-08-01",
+  "holdout_end_exclusive": "2018-09-01",
+  "outcome_cutoff_exclusive": "2018-10-01 00:00:00",
+  "alert_schedule": "hourly_on_the_hour",
+  "shipping_warning_hours": 24,
+  "delivery_warning_hours": 24,
+  "minimum_group_orders": 100,
+  "assumptions": [
+    "C is an analyst-defined observation boundary, not a known complete extraction time.",
+    "Published deadlines and item attributes are assumed available after approval and static.",
+    "An event becomes visible at its recorded event time; no ingestion-delay history exists.",
+    "Replay eligibility is restricted to final delivered, single-item-row, valid timestamp orders; selection bias applies.",
+    "No causal business improvement or production alert accuracy is claimed."
+  ]
+}
