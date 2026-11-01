@@ -9,7 +9,7 @@
 | 交付项 | 当前状态 |
 |---|---|
 | 公开 HTTPS 演示 | [进入商衡工作台](https://olist-merchant-workbench.luozilong888.chatgpt.site/) · [项目说明](https://olist-merchant-workbench.luozilong888.chatgpt.site/case.html)；已公开部署，核心交互验收完成 |
-| GitHub 仓库 | [v123-tech/olist-merchant-operations-dashboard](https://github.com/v123-tech/olist-merchant-operations-dashboard)；已创建，源文件尚待上传 |
+| GitHub 仓库 | [v123-tech/olist-merchant-operations-dashboard](https://github.com/v123-tech/olist-merchant-operations-dashboard)；源码、文档、截图及派生数据已公开上传 |
 | 运行方式 | 静态页面与浏览器内计算，无需访客安装 Python 或注册账号 |
 | 产品截图 | 已加入本地浏览器实拍与公网订单详情实拍 |
 
