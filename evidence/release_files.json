@@ -1,5 +1,5 @@
 {
-  "status": "site-public-github-upload-pending",
+  "status": "site-and-github-public",
   "scope": "Hashes describe the sanitized public copy. The owner-controlled source retains its private hosting identity and full deployment receipt.",
   "excluded": "actual Site identity, raw ZIP, SQLite, original actions, secrets, caches, backups, isolated failure fixture",
   "files": [
@@ -125,8 +125,8 @@
     },
     {
       "path": "docs/发布审阅与交付报告.md",
-      "bytes": 7976,
-      "sha256": "40a690a8e350479195dc302f28406f58584db39bc0e5c87d90165e9b6ea530ee"
+      "bytes": 7944,
+      "sha256": "8922c7ff2a6ba4bffaf16d56bc3d84d823b1aaf441025cbd655d77c510731a9b"
     },
     {
       "path": "docs/面试展示材料.md",
@@ -405,8 +405,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10728,
-      "sha256": "8d52a5091ca1e1b23a5841f02b0c250eb5985dfe74960e3a62d58b1db8a5f874"
+      "bytes": 10749,
+      "sha256": "2edc0fef1abb67812e8b9aa3d2a19a40464be789fd6a8e4e20f682df2be86218"
     },
     {
       "path": "replay.py",
@@ -478,5 +478,6 @@
       "bytes": 5175,
       "sha256": "951e6470c96d5f608bb1d31f65c112d2db8a1e0517b3f7466416ac2f56b9e5dd"
     }
-  ]
+  ],
+  "github_source_upload_commit": "db732b9f7053ac730dcdc102e55237dcb4ddb9cc"
 }
