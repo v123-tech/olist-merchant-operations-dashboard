@@ -1,0 +1,5 @@
+/* ShopPeek / 瞄店 — shared visual tokens, no remote font or asset dependency. */
+:root{--sp-primary:#4f46e5;--sp-primary-hover:#4338ca;--sp-primary-soft:#eeedff;--sp-bg:#f7f8fa;--sp-surface:#fff;--sp-ink:#182230;--sp-muted:#667085;--sp-line:#e4e7ec;--sp-radius:10px;--sp-font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-family:var(--sp-font);font-synthesis:none;color:var(--sp-ink);color-scheme:light}
+*{box-sizing:border-box}body{margin:0;font-family:var(--sp-font)}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit}img{max-width:100%}button{cursor:pointer}:focus-visible{outline:3px solid #818cf8;outline-offset:3px}::selection{background:#dedbff;color:#282269}[hidden]{display:none!important}
+.sp-mark{display:block;width:34px;height:34px;flex-shrink:0}.sp-wordmark{font-weight:740;letter-spacing:-.7px;font-size:23px;color:var(--sp-ink)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}

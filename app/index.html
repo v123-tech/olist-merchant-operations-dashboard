@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="基于Olist真实公开历史数据的商家经营分析与履约预警产品实践。">
+  <title>ShopPeek 瞄店 · Olist 商家运营工作台</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../brand.css"><link rel="stylesheet" href="../app.css?v=stage1-5">
+  <script type="module" src="../app.js"></script>
+</head>
+<body class="shoppeek-app">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <a class="brand" href="../" aria-label="ShopPeek 瞄店首页"><img class="sp-mark" src="../assets/mark.svg" width="34" height="34" alt=""><span><strong class="sp-wordmark">ShopPeek</strong><small>瞄店 · 商家运营工作台</small></span></a>
+      <span class="sidebar-label">产品体验</span>
+      <nav>
+        <a class="nav-link active" href="#overview" data-page="overview" aria-current="page"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M8 15V10M13 15V6M18 15v-3"/></svg><span>经营概览</span></a>
+        <a class="nav-link" href="#workbench" data-page="workbench"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5H5v15h14V5h-3M9 3h6v4H9zM8 12h8M8 16h5"/></svg><span>履约工作台</span></a>
+        <a class="nav-link" href="#validation" data-page="validation"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6"/></svg><span>规则与验证</span></a>
+      </nav>
+      <div class="sidebar-note"><span class="sidebar-note-label">Olist 历史数据</span><strong>瞄一眼，<br>知道今天该盯什么。</strong><p>发现异常，沿订单核查，再用历史结果验证判断。</p><a href="../case.html" class="project-link">了解产品设计 <span aria-hidden="true">↗</span></a></div>
+      <div class="sidebar-bottom"><span class="workspace-dot" aria-hidden="true"></span><div><strong>公开数据演示</strong><small>浏览器内模拟 · 非实时业务</small></div></div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar"><div class="breadcrumb"><span class="breadcrumb-product">Olist 商家运营工作台</span><span>/</span> <strong id="breadcrumb-page">经营概览</strong></div><div class="topbar-meta"><a href="../case.html">项目说明 ↗</a><span class="badge neutral">历史数据</span><span class="version">ShopPeek</span></div></header>
+      <main id="main" tabindex="-1">
+        <div id="global-error" role="alert" hidden></div>
+        <div id="data-progress" class="data-progress" role="status" aria-live="polite" hidden><span>正在准备数据…</span><progress aria-label="数据读取进度"></progress></div>
+        <section id="page-overview" class="page" aria-labelledby="overview-title">
+          <div class="page-heading"><div><span class="page-kicker">经营洞察</span><h1 id="overview-title">经营概览 <span class="badge blue">真实历史分析</span></h1><p>看清经营规模与履约异常，再沿订单核对原因。</p></div><a class="button subtle" href="#validation">查看指标口径</a></div>
+          <details class="filter-disclosure" open><summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg><strong>筛选条件</strong><span>日期 · 商家 · 品类 · 收货州</span><i aria-hidden="true"></i></summary><form id="overview-filters" class="filter-panel" aria-label="经营数据筛选">
+            <div class="filter-field date-field"><label for="overview-start">下单日期</label><div class="date-range"><input type="date" id="overview-start" name="start" value="2017-01-01" required aria-describedby="overview-filter-error"><span>至</span><input type="date" id="overview-end" name="end" value="2018-06-30" required aria-label="下单结束日期" aria-describedby="overview-filter-error"></div></div>
+            <div class="filter-field"><label for="overview-seller">商家</label><select id="overview-seller" name="seller"><option value="">全部商家</option></select></div>
+            <div class="filter-field"><label for="overview-category">品类</label><select id="overview-category" name="category"><option value="">全部品类</option></select></div>
+            <div class="filter-field small"><label for="overview-state">收货州</label><select id="overview-state" name="state"><option value="">全部州</option></select></div>
+            <div class="filter-actions"><button class="button primary" type="submit">应用筛选</button><button class="button text-button" type="button" id="overview-reset">重置</button></div>
+            <div id="overview-filter-error" class="form-error filter-error" role="alert" hidden></div>
+          </form></details>
+          <div class="scope-line"><span class="status-dot teal"></span><span id="overview-scope">正在读取经营数据…</span><span class="scope-tag">按下单日期 · BRL 原币</span></div>
+          <div id="overview-cards" class="metric-grid" aria-live="polite"></div>
+          <div class="charts-grid">
+            <section class="panel trend-panel" aria-labelledby="trend-title"><div class="panel-header"><div><h2 id="trend-title">规模与履约趋势</h2><p>分开看订单量与晚收货率，让异常更容易被发现。</p></div></div><div id="monthly-chart" class="chart-region"></div></section>
+            <section class="panel region-panel" aria-labelledby="region-title"><div class="panel-header"><div><h2 id="region-title">地区异常分布</h2><p>按晚收货订单量排序 · 前6个匹配州</p></div></div><div id="states-chart" class="region-chart"></div><div class="panel-footnote">点击州名查看明细。地区差异不能直接归责商家或承运商。</div></section>
+          </div>
+          <section class="panel order-panel" aria-labelledby="orders-title"><div class="panel-header"><div><h2 id="orders-title">订单明细 <span id="orders-total" class="count-label"></span></h2><p>一行一个订单；查看完整时间线、商品归属与质量标记。</p></div><div class="table-tools"><label class="sr-only" for="order-late-filter">履约结果</label><select id="order-late-filter"><option value="all">全部履约结果</option><option value="late">晚收货</option><option value="on_time">按期收货</option><option value="unknown">不可判定</option></select></div></div><div id="orders-table"></div><div id="orders-pagination" class="pagination"></div></section>
+          <div class="honesty-note"><p>商品金额不是净收入或利润。评分与履约均为整单结果；商家、品类筛选不能拆出独立包裹评价。</p></div>
+        </section>
+        <section id="page-workbench" class="page" aria-labelledby="workbench-title" hidden>
+          <div class="page-heading"><div><span class="page-kicker">优先核查，按单跟进</span><h1 id="workbench-title">履约工作台 <span class="badge teal">历史模拟</span></h1><p>快速识别待核查订单，理解触发原因，记录跟进状态。</p></div><div class="heading-actions"><button class="button text-button" type="button" id="reset-actions">重置模拟记录</button><a class="button subtle" href="#validation">查看规则依据</a></div></div>
+          <div class="replay-banner"><svg class="replay-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><p>只展示所选时点已发生的事件。模拟记录仅保存在当前浏览器，刷新后保留；请勿填写个人或敏感信息。</p><span class="badge neutral">非实时业务</span></div>
+          <details class="filter-disclosure" open><summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg><strong>回放条件</strong><span>历史时点 · 商家 · 品类 · 收货州</span><i aria-hidden="true"></i></summary><form id="replay-filters" class="filter-panel" aria-label="历史回放筛选">
+            <div class="filter-field time-field"><label for="replay-as-of">历史时点（数据集原始时间）</label><input type="datetime-local" id="replay-as-of" name="as_of" value="2018-03-15T08:00" required aria-describedby="replay-filter-error"></div>
+            <div class="filter-field"><label for="replay-seller">商家</label><select id="replay-seller" name="seller"><option value="">全部商家</option></select></div>
+            <div class="filter-field"><label for="replay-category">品类</label><select id="replay-category" name="category"><option value="">全部品类</option></select></div>
+            <div class="filter-field small"><label for="replay-state">收货州</label><select id="replay-state" name="state"><option value="">全部州</option></select></div>
+            <div class="filter-actions"><button class="button primary" type="submit">回放此刻</button></div>
+            <div id="replay-filter-error" class="form-error filter-error" role="alert" hidden></div>
+          </form></details>
+          <div id="replay-summary" class="replay-summary" aria-live="polite"></div>
+          <section class="panel queue-panel" aria-labelledby="queue-title">
+            <div class="panel-header"><div><h2 id="queue-title">跟进任务 <span id="queue-total" class="count-label"></span></h2><p>一单一个任务，保留全部触发原因。</p></div><div class="table-tools">
+              <label class="sr-only" for="queue-rule-filter">异常规则类型</label><select id="queue-rule-filter"><option value="all">全部异常类型</option><option value="R1">R1 · 交运截止临近</option><option value="R2">R2 · 交运截止已过</option><option value="R3">R3 · 承诺收货日临近</option><option value="R4">R4 · 承诺收货截止已过</option></select>
+              <label class="sr-only" for="queue-status-filter">模拟处置状态</label><select id="queue-status-filter"><option value="">全部处置状态</option><option value="pending">待处理</option><option value="processing">处理中</option><option value="resolved">已处理</option><option value="ignored">已忽略</option></select>
+            </div></div>
+            <div class="queue-sort-note"><strong>排序依据</strong><span>R4 逾期监控 → R2 交运逾期 → R3 承诺临近 → R1 交运临近；同级按承诺截止从早到晚。</span><details><summary>为什么会看到长时间逾期？</summary><p>小时数是所选历史时点与截止的真实时间差。早期尚未看到收货事件的订单会排在前面；这不代表已有用户投诉，也不是风险评分。可用异常类型和处置状态筛选聚焦任务，不删除历史样本。</p></details></div>
+            <div id="queue-table"></div><div id="queue-pagination" class="pagination"></div>
+          </section>
+          <div class="honesty-note"><p>队列限最终已妥投、单商品行且时间有效的样本，存在事后选择偏差。“尚无事件”不等于确认业务异常，不能还原全量线上队列。</p></div>
+        </section>
+        <section id="page-validation" class="page" aria-labelledby="validation-title" hidden>
+          <div class="page-heading"><div><span class="page-kicker">让判断有据可查</span><h1 id="validation-title">规则与验证 <span class="badge neutral">可复核证据</span></h1><p>看懂触发条件、历史结果与适用边界。</p></div><button class="button subtle" id="validation-reload" type="button">刷新验证报告</button></div>
+          <div class="validation-tabs" role="group" aria-label="说明分类"><button class="active" data-section="rules-section" aria-pressed="true">核心证据</button><button data-section="evaluation-section" aria-pressed="false">完整验证</button><button data-section="quality-section" aria-pressed="false">数据口径</button></div>
+          <div id="rules-section" class="validation-section"><div id="validation-highlights"></div><div class="rules-heading"><h2>冻结规则</h2><p>根据截止与已见事件生成核查线索。</p></div><div class="section-intro"><span class="badge blue" id="rules-version">规则版本待读取</span><p>先看截止与已见事件，再核查真实业务状态。</p></div><div id="rule-cards" class="rule-grid"></div><details class="evidence-details"><summary>使用规则前，请理解这些边界</summary><ul class="note-list"><li>只回放最终已妥投、单商品行且时间有效的订单，存在事后选择偏差，不能外推全量生产队列。</li><li>假设截止和商品属性在批准后可见且不修改，事件在记录时刻立即可见。源数据缺少修改历史、取消时刻与入库延迟。</li><li>建议动作仍需目标用户任务测试；历史模拟没有真实干预，不能声称减少延误或提高收入。</li></ul></details></div>
+          <div id="evaluation-section" class="validation-section" hidden><div id="evaluation-content"></div></div>
+          <div id="quality-section" class="validation-section" hidden><div id="quality-content"></div><section class="panel definitions"><div class="panel-header"><div><h2>首版指标口径</h2><p>商品金额与订单结果按各自粒度计算。</p></div></div><dl><div><dt>已妥投商品记录金额</dt><dd>最终已妥投订单中，筛选范围内匹配商品行 price 合计，BRL原币、不含运费。商家、品类仅归属匹配商品行；不是收入或利润。全状态商品记录金额另行披露。</dd></div><div><dt>去重订单量</dt><dd>符合下单日期、收货州及商品归属筛选的 order_id 去重计数；一单多商家可在各自视图出现，不可直接相加为平台订单。</dd></div><div><dt>晚收货率</dt><dd>实际收货日期晚于承诺收货日期的订单数 ÷ 时间有效的已妥投订单数；同一天收货按期，未收货或无效时间不可判定。</dd></div><div><dt>低评分率</dt><dd>选定订单级评分为1—2分的订单数 ÷ 有效评价订单数，并披露评价覆盖率。评分仅用于历史解释，不用于回放触发。</dd></div><div><dt>提示命中比例</dt><dd>承诺截止前至少提示一次且最终晚收货的订单数 ÷ 承诺截止前至少提示一次的订单数。它是样本内历史结果，不是线上准确率。</dd></div></dl></section><div id="data-source" class="source-note"></div></div>
+        </section>
+        <footer class="page-footer"><span>数据：<a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank" rel="noopener noreferrer">Olist / Kaggle</a> · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a><br>经清洗、聚合及规则回放；非 Olist 官方产品。</span><span><a href="../case.html">产品实践与验证边界 ↗</a><br><button type="button" class="button text-button" id="clear-data-cache" aria-describedby="data-cache-note">清除数据缓存</button><br><small id="data-cache-note" role="status">重新下载历史数据，保留模拟记录。</small></span></footer>
+      </main>
+    </div>
+  </div>
+  <div id="drawer-overlay" class="drawer-overlay" hidden></div>
+  <aside id="order-drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
+    <div class="drawer-header"><div><h2 id="drawer-title">订单详情</h2><p id="drawer-subtitle">核查事件与跟进记录</p></div><button type="button" class="icon-button" id="drawer-close" aria-label="关闭订单详情"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div id="drawer-content" class="drawer-content"></div>
+    <div id="drawer-footer" class="drawer-footer" hidden><div><strong>本地模拟处置</strong><small>当前演示动作，刷新后保留</small></div><button type="submit" form="action-form" class="button primary" id="drawer-save">保存模拟处置</button></div>
+  </aside>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <div id="chart-tooltip" class="chart-tooltip" role="status" hidden></div>
+  <dialog id="reset-dialog" aria-labelledby="reset-title"><form method="dialog"><h2 id="reset-title">重置当前浏览器的模拟记录？</h2><p>清除本网站在当前浏览器保存的处置状态与备注，历史订单和其他访问者不受影响。</p><div id="reset-error" role="alert" hidden></div><div class="dialog-actions"><button class="button subtle" value="cancel" autofocus>取消</button><button class="button primary" type="button" id="reset-confirm">确认重置</button></div></form></dialog>
+  <noscript><p>此作品集需要启用 JavaScript 才能筛选订单和回放历史规则。</p></noscript>
+</body>
+</html>

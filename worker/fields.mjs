@@ -1,0 +1,5 @@
+/* Historical, list and as-of output allowlists from the frozen engine.
+ * These are projections; runtime column schema validation belongs to the loader. */
+export const ORDER_FIELDS = "order_id order_status purchase_at approved_at carrier_at delivered_at estimated_at promise_end_exclusive customer_state customer_city item_count seller_count item_amount_cents freight_amount_cents payment_amount_cents late_valid is_late review_valid review_score review_answer_at timeline_valid shipping_deadline_valid shipping_limit_min shipping_limit_max".split(" ");
+export const LIST_FIELDS = "order_id purchase_at order_status customer_state item_count seller_count item_amount_cents freight_amount_cents matched_item_amount_cents matched_freight_amount_cents matched_item_rows late_valid is_late review_valid review_score estimated_at delivered_at".split(" ");
+export const STATIC = "item_count seller_count single_item_seller_id single_product_id single_category customer_state item_amount_cents freight_amount_cents".split(" ");

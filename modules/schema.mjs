@@ -1,0 +1,26 @@
+import {JSON_SHAPES,DATA_RELEASE_ID} from './json-shapes.mjs';
+export const RESOURCE_NAMES=['orders.json.gz','items.json.gz','meta.json','config.json','default-overview.json','quality_report.json','replay_results.json'];
+export const ORDER_FIELDS='order_id order_status purchase_at approved_at carrier_at delivered_at estimated_at customer_state customer_city item_count seller_count item_amount_cents freight_amount_cents payment_amount_cents review_valid review_score review_answer_at single_item_seller_id single_product_id single_category promise_end_exclusive shipping_limit_min shipping_limit_max timeline_valid shipping_deadline_valid late_valid is_late replay_eligible purchase_month'.split(' ');
+export const ITEM_FIELDS='order_id order_item_id product_id seller_id category price_cents freight_cents shipping_limit_at invalid_money_row'.split(' ');
+export function dataError(code,message){return Object.assign(new Error(message),{code,status:503});}
+const reject=(code,message)=>{throw dataError(code,message);};
+const exact=(a,b)=>Array.isArray(a)&&a.length===b.length&&a.every((v,i)=>v===b[i]);
+export async function digest(bytes,cryptoImpl=globalThis.crypto){if(!cryptoImpl?.subtle)reject('crypto_unavailable','此浏览器无法校验数据，请使用支持安全校验的新版浏览器。');return [...new Uint8Array(await cryptoImpl.subtle.digest('SHA-256',bytes))].map(x=>x.toString(16).padStart(2,'0')).join('');}
+export async function validateManifest(m,cryptoImpl){
+  if(!m||m.manifest_version!==2||m.schema_version!==1||m.data_version!=='olist-kaggle-v2'||m.license!=='CC BY-NC-SA 4.0')reject('manifest_version','数据清单版本不兼容，请刷新后重试。');
+  if(!m.files||!exact(Object.keys(m.files).sort(),[...RESOURCE_NAMES].sort()))reject('manifest_resources','数据清单包含缺失或未允许的资源。');
+  for(const name of RESOURCE_NAMES){const e=m.files[name];if(!e||!Number.isSafeInteger(e.bytes)||e.bytes<1||e.bytes>25*1024*1024||!Number.isSafeInteger(e.uncompressed_bytes)||e.uncompressed_bytes<1||e.uncompressed_bytes>64*1024*1024||!['sha256','uncompressed_sha256'].every(k=>/^[a-f0-9]{64}$/.test(e[k])))reject('manifest_invalid','数据资源清单无效。');const compressed=name.endsWith('.gz');if(e.encoding!==(compressed?'gzip':'identity')||e.kind!==(compressed?'columnar':'json'))reject('manifest_schema','数据资源格式不兼容。');if(compressed&&(!exact(e.fields,name.startsWith('orders')?ORDER_FIELDS:ITEM_FIELDS)||e.rows!==(name.startsWith('orders')?99441:112650)))reject('manifest_fields','数据字段或样本行数不符合已冻结白名单。');}
+  const expected='olist-v2-'+(await digest(new TextEncoder().encode(RESOURCE_NAMES.slice().sort().map(n=>[n,m.files[n].sha256,m.files[n].uncompressed_sha256,m.files[n].bytes,m.files[n].uncompressed_bytes].join(':')).join('\n')),cryptoImpl)).slice(0,16);
+  if(m.release_id!==expected||m.release_id!==DATA_RELEASE_ID)reject('manifest_release','数据版本与清单不一致，请重新读取。');return m;
+}
+function checkShape(value,s){if(s.type==='union')return s.anyOf.some(x=>checkShape(value,x));if(s.type==='empty')return false;if(s.type==='null')return value===null;if(s.type==='array')return Array.isArray(value)&&value.every(v=>checkShape(v,s.items));if(s.type==='object'){if(!value||typeof value!=='object'||Array.isArray(value))return false;return Object.keys(value).every(k=>Object.hasOwn(s.properties,k))&&s.required.every(k=>Object.hasOwn(value,k))&&Object.entries(value).every(([k,v])=>checkShape(v,s.properties[k]));}return typeof value===s.type&&(s.type!=='number'||Number.isFinite(value));}
+export function validatePayload(name,payload,entry){
+  if(entry.kind==='json'){if(!checkShape(payload,JSON_SHAPES[name]))reject('data_schema','汇总数据包含未允许字段或无效结构。');return payload;}
+  const expected=name.startsWith('orders')?ORDER_FIELDS:ITEM_FIELDS;
+  if(!payload||!exact(Object.keys(payload).sort(),['columns','fields','rows'])||payload.rows!==entry.rows||!exact(payload.fields,expected)||!Array.isArray(payload.columns)||payload.columns.length!==expected.length)reject('data_schema','历史数据结构、字段或行数未通过校验。');
+  const nullable=new Set('approved_at carrier_at delivered_at item_amount_cents freight_amount_cents payment_amount_cents review_score review_answer_at single_item_seller_id single_product_id single_category shipping_limit_min shipping_limit_max is_late'.split(' '));
+  const numbers=new Set('item_count seller_count item_amount_cents freight_amount_cents payment_amount_cents review_valid review_score timeline_valid shipping_deadline_valid late_valid is_late replay_eligible price_cents freight_cents invalid_money_row'.split(' '));
+  const flags=new Set('review_valid timeline_valid shipping_deadline_valid late_valid is_late replay_eligible invalid_money_row'.split(' '));
+  for(let j=0;j<expected.length;j++){const field=expected[j],col=payload.columns[j];if(!Array.isArray(col)||col.length!==payload.rows)reject('data_columns','历史数据列长度不一致。');for(const value of col){if(value===null&&nullable.has(field))continue;if(numbers.has(field)){if(!Number.isSafeInteger(value)||(flags.has(field)&&value!==0&&value!==1))reject('data_type','历史数据数值类型不正确。');}else if(typeof value!=='string')reject('data_type','历史数据文本类型不正确。');if((field==='order_id'||field==='seller_id'||field==='product_id'||field==='single_item_seller_id'||field==='single_product_id')&&!/^[a-f0-9]{32}$/.test(value))reject('data_id','历史匿名标识格式不正确。');}}
+  return payload;
+}

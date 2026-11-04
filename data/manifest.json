@@ -1,0 +1,110 @@
+{
+  "manifest_version": 2,
+  "schema_version": 1,
+  "data_version": "olist-kaggle-v2",
+  "release_id": "olist-v2-b750f229fd7e43d9",
+  "source": "Olist / Kaggle dataset version 2",
+  "license": "CC BY-NC-SA 4.0",
+  "files": {
+    "orders.json.gz": {
+      "kind": "columnar",
+      "encoding": "gzip",
+      "bytes": 9499095,
+      "sha256": "c30b3052e6cfec1479b3b378983c0fa1460f399ded4ac86076ce6073921bdebe",
+      "uncompressed_bytes": 38403525,
+      "uncompressed_sha256": "2506155645f3c16c5c792ac01d143657a4fdffbac1cea8cce6201ebeebe8313c",
+      "rows": 99441,
+      "fields": [
+        "order_id",
+        "order_status",
+        "purchase_at",
+        "approved_at",
+        "carrier_at",
+        "delivered_at",
+        "estimated_at",
+        "customer_state",
+        "customer_city",
+        "item_count",
+        "seller_count",
+        "item_amount_cents",
+        "freight_amount_cents",
+        "payment_amount_cents",
+        "review_valid",
+        "review_score",
+        "review_answer_at",
+        "single_item_seller_id",
+        "single_product_id",
+        "single_category",
+        "promise_end_exclusive",
+        "shipping_limit_min",
+        "shipping_limit_max",
+        "timeline_valid",
+        "shipping_deadline_valid",
+        "late_valid",
+        "is_late",
+        "replay_eligible",
+        "purchase_month"
+      ]
+    },
+    "items.json.gz": {
+      "kind": "columnar",
+      "encoding": "gzip",
+      "bytes": 5677733,
+      "sha256": "e0dbd432f638c9b0ac30c31b55cff7ea835db3d66112923e0ba4a332db1b7db7",
+      "uncompressed_bytes": 17923867,
+      "uncompressed_sha256": "b8a01bc0a07c277dddc624963a3481b3327359c4000fbae4d8dbae7435618087",
+      "rows": 112650,
+      "fields": [
+        "order_id",
+        "order_item_id",
+        "product_id",
+        "seller_id",
+        "category",
+        "price_cents",
+        "freight_cents",
+        "shipping_limit_at",
+        "invalid_money_row"
+      ]
+    },
+    "meta.json": {
+      "kind": "json",
+      "encoding": "identity",
+      "bytes": 238949,
+      "sha256": "babeb7fe3b8ccbeb13443460fce0c7ff8c0c8d1ee3851ada40b2eea6e42d9244",
+      "uncompressed_bytes": 238949,
+      "uncompressed_sha256": "babeb7fe3b8ccbeb13443460fce0c7ff8c0c8d1ee3851ada40b2eea6e42d9244"
+    },
+    "config.json": {
+      "kind": "json",
+      "encoding": "identity",
+      "bytes": 950,
+      "sha256": "c65f234d18131b36c3eded8a17a416c76db8d3cef8b77ac68765889d9beb4278",
+      "uncompressed_bytes": 950,
+      "uncompressed_sha256": "c65f234d18131b36c3eded8a17a416c76db8d3cef8b77ac68765889d9beb4278"
+    },
+    "default-overview.json": {
+      "kind": "json",
+      "encoding": "identity",
+      "bytes": 6641,
+      "sha256": "9468a8a8c27253bcdf6acfebfe716183a922fc8a2e09236bf230caa1b65bbb51",
+      "uncompressed_bytes": 6641,
+      "uncompressed_sha256": "9468a8a8c27253bcdf6acfebfe716183a922fc8a2e09236bf230caa1b65bbb51"
+    },
+    "quality_report.json": {
+      "kind": "json",
+      "encoding": "identity",
+      "bytes": 4726,
+      "sha256": "cdd52fdda0d79bb908893c6c0dbcbd7302290ed9053dbad5f5150a9010781127",
+      "uncompressed_bytes": 4726,
+      "uncompressed_sha256": "cdd52fdda0d79bb908893c6c0dbcbd7302290ed9053dbad5f5150a9010781127"
+    },
+    "replay_results.json": {
+      "kind": "json",
+      "encoding": "identity",
+      "bytes": 15931,
+      "sha256": "52a734fdbaef6b144ccaebcb435dabe08ee40de684279709185219ee91dba8e5",
+      "uncompressed_bytes": 15931,
+      "uncompressed_sha256": "52a734fdbaef6b144ccaebcb435dabe08ee40de684279709185219ee91dba8e5"
+    }
+  }
+}
