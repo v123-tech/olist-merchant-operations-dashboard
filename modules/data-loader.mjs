@@ -3,7 +3,9 @@ import {DATA_RELEASE_ID} from './json-shapes.mjs';
 const CACHE_NAME='shoppeek-verified-data-v2';
 export function createDataLoader(options={}){
   const base=new URL(options.baseUrl??'../',import.meta.url),fetchImpl=options.fetchImpl??globalThis.fetch.bind(globalThis),cryptoImpl=options.cryptoImpl??globalThis.crypto;
-  const timeoutMs=options.timeoutMs??30000,maxRetries=options.maxRetries??1,parsed=new Map(),bytesMemory=new Map(),controllers=new Set(),writes=new Set();let manifestPromise,cachePromise,epoch=0;
+  // A slow, progressing transfer is healthy. Bound inactivity separately from
+  // the total attempt so a large file is not discarded after 30 seconds.
+  const timeoutMs=options.timeoutMs??30000,maxDurationMs=options.maxDurationMs??15*60*1000,maxRetries=options.maxRetries??1,parsed=new Map(),bytesMemory=new Map(),controllers=new Set(),writes=new Set();let manifestPromise,cachePromise,epoch=0;
   const counters={networkRequests:0,networkBytes:0,memoryHits:0,persistentHits:0,invalidCache:0,parses:0,decompressions:0,cacheAvailable:null,timings:{},release:DATA_RELEASE_ID};
   const emit=e=>{try{options.onProgress?.(e);}catch{}};
   const clock=()=>globalThis.performance?.now?.()??Date.now();
@@ -14,18 +16,26 @@ export function createDataLoader(options={}){
   async function putCache(c,key,bytes,token){current(token);const pending=c.put(key,new Response(bytes));writes.add(pending);try{await pending;}finally{writes.delete(pending);}}
   const owned=request=>{const u=new URL(request.url??String(request));return u.origin===base.origin&&u.pathname.startsWith(new URL('data/',base).pathname)&&u.searchParams.has('shoppeek_verified');};
   async function pruneCache(c,m,token){const keep=new Set([cacheKey('manifest.json',DATA_RELEASE_ID),...RESOURCE_NAMES.map(n=>cacheKey(n,m.files[n].sha256))]);for(const request of await c.keys()){current(token);if(owned(request)&&!keep.has(request.url??String(request)))await c.delete(request);}}
-  async function getResponse(name){const token=epoch;let last;for(let attempt=0;attempt<=maxRetries;attempt++){
-    const controller=new AbortController();controllers.add(controller);const timer=setTimeout(()=>controller.abort(),timeoutMs);try{
+  async function networkBytes(name,total,limit=name==='manifest.json'?256*1024:total){const token=epoch,started=clock();let last;for(let attempt=0;attempt<=maxRetries;attempt++){
+    current(token);
+    if(attempt)emit({phase:'retry',resource:name,attempt,maxRetries,message:'连接中断，正在重新下载此文件'});
+    const controller=new AbortController();controllers.add(controller);let idleTimer,reader;
+    const touch=()=>{clearTimeout(idleTimer);idleTimer=setTimeout(()=>controller.abort(),timeoutMs);};
+    const deadline=setTimeout(()=>controller.abort(),maxDurationMs);touch();let received=0;
+    try{
       counters.networkRequests++;const response=await fetchImpl(urlFor(name),{cache:'no-cache',signal:controller.signal});
       if(!response.ok){const error=dataError('http_error',`数据资源读取失败（${response.status}），请稍后重试。`);error.httpStatus=response.status;throw error;}
-      // Keep timeout active through the body read, not only until headers.
-      return {response,finish:()=>{clearTimeout(timer);controllers.delete(controller);}};
-    }catch(e){clearTimeout(timer);controllers.delete(controller);current(token);last=e.name==='AbortError'?dataError('data_timeout','数据下载超时，请检查连接后重试。'):e.code?e:dataError('network_error','暂时无法连接数据资源，请检查网络后重试。');if(attempt===maxRetries||last.httpStatus&&last.httpStatus<500&&last.httpStatus!==429)throw last;}
+      touch();let out;
+      if(response.body?.getReader){const chunks=[];reader=response.body.getReader();for(;;){const {done,value}=await reader.read();current(token);if(done)break;if(!value.byteLength)continue;touch();received+=value.byteLength;
+        if(received>limit)throw dataError('data_size','数据大小超出已核验资源的读取范围。');chunks.push(value);emit({phase:'download',resource:name,attempt,loaded:received,total:received<=(total??0)?total:undefined});}
+        out=new Uint8Array(received);let offset=0;for(const part of chunks){out.set(part,offset);offset+=part.byteLength;}
+      }else{out=new Uint8Array(await response.arrayBuffer());current(token);if(out.byteLength>limit)throw dataError('data_size','数据大小超出已核验资源的读取范围。');emit({phase:'download',resource:name,attempt,loaded:out.byteLength,total:out.byteLength===total?total:undefined});}
+      counters.networkBytes+=out.byteLength;counters.timings[name]={...(counters.timings[name]??{}),downloadMs:clock()-started};return out;
+    }catch(e){current(token);last=e.name==='AbortError'?dataError('data_timeout','数据连接长时间无响应或下载已超出时限，请重试。'):e.code?e:dataError('network_error','数据连接中断，请检查网络后重试。');
+      const retryable=['data_timeout','network_error'].includes(last.code)||last.httpStatus>=500||last.httpStatus===429;
+      if(attempt===maxRetries||!retryable)throw last;
+    }finally{clearTimeout(idleTimer);clearTimeout(deadline);controllers.delete(controller);controller.abort();if(reader)void reader.cancel().catch(()=>{});}
   }throw last;}
-  async function networkBytes(name,total,limit=name==='manifest.json'?256*1024:total){const token=epoch,started=clock();const {response,finish}=await getResponse(name);let received=0;try{const chunks=[];if(response.body?.getReader){const reader=response.body.getReader();for(;;){const {done,value}=await reader.read();current(token);if(done)break;received+=value.byteLength;
-      if(received>limit){await reader.cancel().catch(()=>{});throw dataError('data_size','数据大小超出已核验资源的读取范围。');}chunks.push(value);emit({phase:'download',resource:name,loaded:received,total:received<=(total??0)?total:undefined});}const out=new Uint8Array(received);let offset=0;for(const part of chunks){out.set(part,offset);offset+=part.byteLength;}counters.networkBytes+=received;counters.timings[name]={...(counters.timings[name]??{}),downloadMs:clock()-started};return out;}
-      const out=new Uint8Array(await response.arrayBuffer());current(token);if(out.byteLength>limit)throw dataError('data_size','数据大小超出已核验资源的读取范围。');counters.networkBytes+=out.byteLength;emit({phase:'download',resource:name,loaded:out.byteLength,total:out.byteLength===total?total:undefined});return out;
-    }catch(e){current(token);if(e.name==='AbortError')throw dataError('data_timeout','数据下载超时，请检查连接后重试。');throw e;}finally{finish();}}
   async function getManifest(){if(!manifestPromise){const token=epoch;manifestPromise=(async()=>{emit({phase:'manifest',message:'读取数据版本'});const c=await cache(),key=cacheKey('manifest.json',DATA_RELEASE_ID);let bytes;try{bytes=await networkBytes('manifest.json');}catch(error){current(token);const saved=await c?.match(key).catch(()=>null);if(!saved)throw error;bytes=new Uint8Array(await saved.arrayBuffer());counters.persistentHits++;}
       current(token);let manifest;try{manifest=JSON.parse(new TextDecoder().decode(bytes));}catch{throw dataError('manifest_invalid','数据清单无法读取，请刷新后重试。');}await validateManifest(manifest,cryptoImpl);current(token);if(c)try{await putCache(c,key,bytes,token);await pruneCache(c,manifest,token);}catch(e){current(token);counters.cacheAvailable=false;}return manifest;})().catch(e=>{if(token===epoch){manifestPromise=null;emit({phase:'error',code:e.code??'data_error',message:e.message});}throw e;});}return manifestPromise;}
   async function verify(name,bytes,entry){emit({phase:'verify',resource:name,message:'核对数据完整性'});const hash=await digest(bytes,cryptoImpl);if(bytes.length===entry.bytes&&hash===entry.sha256)return entry.encoding==='gzip'?'gzip':'identity';if(bytes.length===entry.uncompressed_bytes&&hash===entry.uncompressed_sha256)return 'identity';throw dataError('data_hash','数据完整性校验失败，请重新读取，尚未使用这份数据。');}
