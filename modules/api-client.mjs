@@ -17,6 +17,20 @@ export function createApiClient(options={}){
     pending.clear();
     if(notify)emit({phase:'error',message:error.message});
   }
+  function armTask(session,task){
+    clearTimeout(task.timer);
+    const remaining=task.deadline-Date.now();
+    task.timer=setTimeout(()=>failSession(session,dataError('query_timeout','数据处理长时间无响应，请重试。')),Math.max(0,Math.min(options.queryTimeoutMs??90000,remaining)));
+  }
+  function noteProgress(session,event={}){
+    // Only new work extends the inactivity watchdog; duplicate byte reports
+    // cannot keep a stalled session alive, and the hard deadline still applies.
+    let key,value;
+    if(event.phase==='download'&&Number.isFinite(event.loaded)&&event.loaded>0){key=`download:${event.resource}:${event.attempt??0}`;value=event.loaded;}
+    else if(['manifest','verify','decode','ready','retry'].includes(event.phase)){key=`${event.phase}:${event.resource??''}:${event.attempt??0}`;value=1;}
+    else return;
+    for(const task of pending.values())if(value>(task.progress.get(key)??0)){task.progress.set(key,value);armTask(session,task);}
+  }
   function ensureWorker(){
     if(worker)return worker;
     let session;
@@ -25,7 +39,7 @@ export function createApiClient(options={}){
     worker=session;
     session.onmessage=event=>{
       if(worker!==session)return;
-      if(event.data.type==='progress'){emit(event.data.progress);return;}
+      if(event.data.type==='progress'){noteProgress(session,event.data.progress);emit(event.data.progress);return;}
       const task=pending.get(event.data.requestId);if(!task)return;
       pending.delete(event.data.requestId);clearTimeout(task.timer);
       if(event.data.error)task.reject(Object.assign(new Error(event.data.error.message),event.data.error));
@@ -39,8 +53,8 @@ export function createApiClient(options={}){
     return new Promise((resolve,reject)=>{
       const requestId=++sequence;
       // Stop the failed session so a retry does not queue behind stalled work.
-      const timer=setTimeout(()=>failSession(session,dataError('query_timeout','数据处理超时，请重试。')),options.queryTimeoutMs??90000);
-      pending.set(requestId,{resolve,reject,timer});
+      const task={resolve,reject,progress:new Map(),deadline:Date.now()+(options.queryMaxDurationMs??35*60*1000)};
+      pending.set(requestId,task);armTask(session,task);
       try{session.postMessage({requestId,path,query,store});}
       catch{failSession(session,dataError('worker_message','数据请求未能发送，请重新读取后重试。'));}
     });
