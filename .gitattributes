@@ -1,0 +1,3 @@
+# Preserve reviewed bytes and SHA-256 across Windows/Linux checkouts.
+# No source file is rewritten by this declaration.
+* -text
