@@ -1,5 +1,5 @@
 /** Display only fixed phase labels and numeric byte counts from the data client. */
-const labels={manifest:"正在读取数据版本…",download:"正在读取历史数据…",retry:"连接中断，正在重试当前文件…",verify:"正在核对文件完整性…",decode:"正在准备可查询的数据…",ready:"数据已准备好",error:"数据暂未准备好，可在当前区域重新读取。"};
+const labels={manifest:"正在读取数据版本…",download:"正在读取历史数据…",retry:"连接中断，正在重试当前文件…",verify:"正在核对文件完整性…",decode:"正在准备可查询的数据…",prepare:"正在准备完整筛选与历史回放数据…",full_loading:"正在重新准备完整历史数据…",snapshot_fallback:"正在读取完整订单数据…",background_error:"最近订单仍可查看；完整筛选数据暂未就绪，切换筛选时可重试。",ready:"数据已准备好",error:"数据暂未准备好，可在当前区域重新读取。"};
 export function progressView(event={}) {
   const phase=Object.hasOwn(labels,event.phase)?event.phase:"download";
   const total=Number.isFinite(event.total)&&event.total>0?event.total:null;
@@ -15,6 +15,6 @@ export function bindProgress(api,element) {
     const view=progressView(event),label=element.querySelector("span"),bar=element.querySelector("progress");
     element.hidden=view.hidden;label.textContent=view.text;
     if(view.total){bar.max=view.total;bar.value=view.loaded;}else bar.removeAttribute("value");
-    bar.hidden=view.phase==="error";
+    bar.hidden=view.phase==="error"||view.phase==="background_error";
   });
 }

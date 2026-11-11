@@ -1,5 +1,5 @@
 import {JSON_SHAPES,DATA_RELEASE_ID} from './json-shapes.mjs';
-export const RESOURCE_NAMES=['orders.json.gz','items.json.gz','meta.json','config.json','default-overview.json','quality_report.json','replay_results.json'];
+export const RESOURCE_NAMES=['orders.json.gz','items.json.gz','meta.json','config.json','default-overview.json','quality_report.json','replay_results.json','default-orders.json'];
 export const ORDER_FIELDS='order_id order_status purchase_at approved_at carrier_at delivered_at estimated_at customer_state customer_city item_count seller_count item_amount_cents freight_amount_cents payment_amount_cents review_valid review_score review_answer_at single_item_seller_id single_product_id single_category promise_end_exclusive shipping_limit_min shipping_limit_max timeline_valid shipping_deadline_valid late_valid is_late replay_eligible purchase_month'.split(' ');
 export const ITEM_FIELDS='order_id order_item_id product_id seller_id category price_cents freight_cents shipping_limit_at invalid_money_row'.split(' ');
 export function dataError(code,message){return Object.assign(new Error(message),{code,status:503});}

@@ -11,7 +11,7 @@ function renderPagination(id, data, kind) {
 function renderOrdersPrompt() {
   $("#orders-total").textContent="";$("#orders-pagination").innerHTML="";
   $("#order-late-filter").disabled=true;
-  $("#orders-table").innerHTML='<div class="empty-state"><strong>按需查看完整订单</strong><small id="orders-data-note">首次查询需读取约15 MB压缩历史数据；概览指标已可浏览。</small><button type="button" class="button subtle" data-load-orders aria-describedby="orders-data-note">加载订单明细</button></div>';
+  $("#orders-table").innerHTML='<div class="empty-state"><strong>按需查看完整订单</strong><small id="orders-data-note">默认日期可先查看最近订单；自定义筛选与回放首次需准备约15 MB完整历史数据。</small><button type="button" class="button subtle" data-load-orders aria-describedby="orders-data-note">加载订单明细</button></div>';
 }
 
 async function loadOrders() {

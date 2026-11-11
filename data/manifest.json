@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "schema_version": 1,
   "data_version": "olist-kaggle-v2",
-  "release_id": "olist-v2-b750f229fd7e43d9",
+  "release_id": "olist-v2-18d36006c6c4c4fe",
   "source": "Olist / Kaggle dataset version 2",
   "license": "CC BY-NC-SA 4.0",
   "files": {
@@ -105,6 +105,14 @@
       "sha256": "52a734fdbaef6b144ccaebcb435dabe08ee40de684279709185219ee91dba8e5",
       "uncompressed_bytes": 15931,
       "uncompressed_sha256": "52a734fdbaef6b144ccaebcb435dabe08ee40de684279709185219ee91dba8e5"
+    },
+    "default-orders.json": {
+      "kind": "json",
+      "encoding": "identity",
+      "bytes": 23753,
+      "sha256": "66f499c3d2b19af0345e2d2516948c5cd33ac186a567d05741cf003a150f473e",
+      "uncompressed_bytes": 23753,
+      "uncompressed_sha256": "66f499c3d2b19af0345e2d2516948c5cd33ac186a567d05741cf003a150f473e"
     }
   }
 }
