@@ -21,3 +21,12 @@ Thumbs.db
 
 # Actual Site identity stays in the owner-controlled source.
 .openai/hosting.json
+
+__pycache__/
+*.pyc
+node_modules/
+.env*
+*.zip
+*.sqlite*
+*.bundle
+Thumbs.db
