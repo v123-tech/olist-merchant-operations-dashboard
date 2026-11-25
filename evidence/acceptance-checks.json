@@ -1,0 +1,51 @@
+{
+  "brand": "瞄店",
+  "status": "local-candidate-verified",
+  "dataBytes": 35348,
+  "dataSha256": "b134baafd3fff607f1ce4f917bcdeafbc7ce5834094ce71a5e4acc2e25363281",
+  "htmlBytes": 89845,
+  "htmlSha256": "95df15a396e274f2edcca345cd25de43d8849797a2d6c6ca5bbb9b2ea86b94c3",
+  "runtimeDataRequests": 0,
+  "staticFileCount": 6,
+  "automated": {
+    "pythonPassed": 17,
+    "javascriptPassed": 7,
+    "staticChecksPassed": 145,
+    "rawReproductionByteIdentical": true,
+    "emittedModuleSyntaxChecked": true,
+    "testsRemoved": 0,
+    "testsSkipped": 0
+  },
+  "browser": {
+    "desktopViewports": [[1440, 900], [1366, 768]],
+    "mobileViewport": [390, 844],
+    "allThreeTabsRendered": true,
+    "documentHorizontalOverflow": false,
+    "merchantInitialCount": 30,
+    "highRiskAndHomeCategoryCount": 1,
+    "merchantEmptyAndResetChecked": true,
+    "dialogThreeActionsAndFocusRestoreChecked": true,
+    "replayDefault": {"days": 7, "aov": 0, "alerts": 42, "historicalBadReviews": 16, "hypotheticalRecovered": 3.2, "laborHours": 3.5},
+    "replayZeroAndMaximumThresholdChecked": true,
+    "urlRefreshRestoreChecked": true,
+    "keyboardTabsSlidersAndEscapeChecked": true,
+    "localReloadInitializationMarkersMs": [45.20, 43.10],
+    "newErrorsCapturedAfterBundlingFix": 0,
+    "screenshots": 9,
+    "realPhoneOrMainlandNetwork": false
+  },
+  "protected": {
+    "oldFilesDeleted": 0,
+    "oldFilesMoved": 0,
+    "rawDataPublished": false,
+    "mainBranchChanged": false,
+    "deploymentChanged": false,
+    "recoveryCommit": "77297aca42b4ec13561d5668fce766ab2ab74589"
+  },
+  "limitations": [
+    "本地初始化标记不是公网首访、首次绘制或内存测量",
+    "未完成新版线上发布与中国大陆免代理一秒首访实测",
+    "20%挽回比例与每单五分钟是情景假设，未证明真实业务改善",
+    "本文件记录本地候选验收时点，后续发布结果须另行记录"
+  ]
+}

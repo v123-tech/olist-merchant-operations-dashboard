@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#4554d9">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="瞄店：从履约延迟与评价分布发现商家风险，用中文行动清单和可解释历史回放辅助平台运营决策。">
+  <title>瞄店｜商家履约与口碑分析</title>
+  <!-- INLINE_STYLES -->
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="topbar">
+    <a class="brand" href="#overview" aria-label="瞄店首页">
+      <svg class="brand-icon" viewBox="0 0 36 36" aria-hidden="true"><rect x="1" y="1" width="34" height="34" rx="10" fill="currentColor"/><path d="M10 14v-4h7m9 4v-4h-5m-11 12v4h7m9-4v4h-5" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round"/><path d="M10 18c5-6 11-6 16 0-5 6-11 6-16 0Z" fill="none" stroke="white" stroke-width="1.8"/><circle cx="18" cy="18" r="2.3" fill="white"/></svg>
+      <span>瞄店</span><span class="brand-caption">商家履约与口碑分析</span>
+    </a>
+    <span class="history-badge">公开历史数据演示</span>
+  </header>
+  <div class="nav-wrap"><nav class="tabs" role="tablist" aria-label="业务分析页面">
+    <button id="tab-overview" role="tab" aria-controls="panel-overview" aria-selected="true" tabindex="0" data-tab="overview">履约与差评归因总览</button>
+    <button id="tab-merchants" role="tab" aria-controls="panel-merchants" aria-selected="false" tabindex="-1" data-tab="merchants">高危商家四象限与干预台</button>
+    <button id="tab-replay" role="tab" aria-controls="panel-replay" aria-selected="false" tabindex="-1" data-tab="replay">可解释预警规则回放器</button>
+  </nav></div>
+  <main id="main">
+    <div id="app-error" role="alert" hidden></div>
+    <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
+      <div class="page-heading"><div><p class="eyebrow">从结果找到核查方向</p><h1>履约与差评归因总览</h1><p class="page-description">把履约表现、评价变化与经营规模放在一起，找出值得优先追问的异常。</p></div><p class="period" id="data-period"></p></div>
+      <div class="kpi-grid" id="overview-kpis" aria-label="四项核心经营指标"></div>
+      <div class="chart-grid">
+        <section class="panel delay-panel" aria-labelledby="delay-title"><div class="panel-heading"><div><h2 id="delay-title">晚到多久，差评开始升高？</h2><p>配送延迟天数与一至二星差评率</p></div><span class="chart-key"><i></i>差评率</span></div><div id="delay-chart" class="delay-chart"></div><div id="delay-detail" class="chart-readout" role="status" aria-live="polite"></div><p class="chart-note">分组仅比较已妥投且时间有效的订单；差评率另以该组有效评价为分母。相关性不等于因果关系。</p></section>
+        <section class="panel" aria-labelledby="category-title"><div class="panel-heading"><div><h2 id="category-title">哪些品类更需要关注？</h2><p>有效妥投样本最多的八类，按延迟率排序</p></div></div><div id="category-chart" class="category-chart"></div><p id="category-detail" class="chart-readout" role="status" aria-live="polite"></p><p class="chart-note">同一订单可能涉及多个品类，品类订单量不可直接相加。品类表现不能直接归责单个商家。</p></section>
+      </div>
+      <div class="insight-strip"><span class="strip-label">如何使用这页</span><p id="overview-insight"></p><button class="text-button" type="button" data-switch="merchants">查看代表商家</button></div>
+    </section>
+    <section id="panel-merchants" role="tabpanel" aria-labelledby="tab-merchants" tabindex="0" hidden>
+      <div class="page-heading"><div><p class="eyebrow">让干预有明确优先级</p><h1>把精力放在关键商家</h1><p class="page-description">将营收规模与履约超时率交叉观察，从三类代表商家中选择下一步核查对象。</p></div><span class="scope-tag">三类分层样本 · 共三十家</span></div>
+      <div class="merchant-top">
+        <section class="panel quadrant-panel" aria-labelledby="quadrant-title"><div class="panel-heading"><div><h2 id="quadrant-title">商家经营四象限</h2><p>点击任意商家，查看中文诊断与三条干预建议</p></div><span id="scatter-count" class="muted"></span></div><div id="scatter-chart" class="scatter-chart"></div><div class="tier-legend"><span><i class="risk-high"></i>高危</span><span><i class="risk-watch"></i>关注</span><span><i class="risk-steady"></i>稳健</span><span><i class="risk-small"></i>样本不足</span></div></section>
+        <aside class="reading-guide"><p class="eyebrow">先看右上象限</p><h2>规模越大，<br>越值得优先核查。</h2><p>高成交额与高延迟率同时出现，意味着更大的经营暴露，但不代表已经查明责任。</p><div class="guide-rule"></div><strong>一份清单，三种任务</strong><ul><li>高营收高延迟：控制履约风险</li><li>高营收高履约：验证稳定放量</li><li>高增长：校准新增订单承接能力</li></ul><p class="guide-footnote">三十家为分层代表样本，不是全平台商家排名，也不代表全部高危商家。</p></aside>
+      </div>
+      <section class="panel merchant-list-panel" aria-labelledby="merchant-list-title"><div class="list-heading"><div><h2 id="merchant-list-title">代表商家行动清单</h2><p id="merchant-results" role="status" aria-live="polite"></p></div><div class="filters"><label>风险分层<select id="tier-filter"><option value="">全部风险</option><option>高危</option><option>关注</option><option>稳健</option><option>样本不足</option></select></label><label>中文品类<select id="category-filter"><option value="">全部品类</option></select></label><button id="reset-filters" class="secondary-button" type="button">清空筛选</button></div></div><div class="table-scroll" role="region" aria-label="代表商家行动清单，窄屏可横向查看" tabindex="0"><table><thead><tr><th scope="col">商家业务代号</th><th scope="col">经营特征</th><th scope="col" class="number">商品记录金额</th><th scope="col" class="number">延迟率 / 有效样本</th><th scope="col">风险分层</th><th scope="col">核查</th></tr></thead><tbody id="merchant-rows"></tbody></table></div><div id="merchant-empty" class="empty-state" hidden><h3>当前条件下没有代表商家</h3><p>尝试选择其他风险分层或中文品类，或清空筛选。</p></div><p class="table-note">金额单位为雷亚尔，含全部订单状态、不含运费，并非净收入。商家名称为匿名业务代号，原始标识不在页面中提供。</p></section>
+    </section>
+    <section id="panel-replay" role="tabpanel" aria-labelledby="tab-replay" tabindex="0" hidden>
+      <div class="page-heading"><div><p class="eyebrow">把覆盖与人力放在同一张账上</p><h1>可解释预警规则回放器</h1><p class="page-description">调节提醒范围与客单价门槛，比较历史样本覆盖和运营排查负担。</p></div><span class="scope-tag">历史截面 · 情景估算</span></div>
+      <div class="replay-layout"><section class="panel controls-panel" aria-labelledby="controls-title"><h2 id="controls-title">调整两个业务条件</h2><div class="slider-block"><div class="slider-heading"><label for="days-slider">提前预警范围</label><output id="days-value" for="days-slider"></output></div><input id="days-slider" type="range" min="0" max="7" step="1" value="3"><div class="range-ends"><span>当天截止</span><span>未来七天内</span></div><p>检查历史截面时尚未收货、承诺截止落在所选范围内的订单。</p></div><div class="slider-block"><div class="slider-heading"><label for="aov-slider">商家历史客单价门槛</label><output id="aov-value" for="aov-slider"></output></div><input id="aov-slider" type="range" min="0" max="500" step="50" value="0"><div class="range-ends"><span>不限金额</span><span>五百雷亚尔</span></div><p>按截面之前的商品金额与去重订单量计算，不使用未来客单价。</p></div><button id="reset-replay" type="button" class="secondary-button">恢复默认条件</button></section><div class="replay-outcomes"><div class="replay-metrics" id="replay-metrics" role="status" aria-live="polite" aria-atomic="true"></div><div class="scenario-explainer"><span class="scenario-label">估算如何得出</span><h2>先展示覆盖事实，<br>再说明挽回假设。</h2><p id="replay-formula"></p><p id="replay-context"></p><p class="assumption-note">挽回比例和每单排查时间是演示假设，并未经过真实商家试验。估算不等于实际减少差评，不用于评价旧版预警规则。</p></div></div></div>
+      <details class="method-details"><summary>查看回放口径与适用边界</summary><p id="replay-method"></p><p>代表商家按完整历史数据分层选择，存在事后选样偏差。可观测的后续结果仅用于回放核查，不是触发当时已知的信息。</p></details>
+    </section>
+    <details class="method-details global-method"><summary>数据口径与分析边界</summary><div class="method-columns"><div><h3>订单与履约</h3><p>总订单包含全部原始状态。准时履约率只以时间有效的已妥投订单为分母；实际收货日期晚于承诺日期才记延迟，同日收货按期。</p></div><div><h3>差评与金额</h3><p>差评指有效评价中的一至二星，每单按固定规则保留一条有效评价。商品记录金额按商品行汇总，不含运费、并非净收入或利润。</p></div><div><h3>使用范围</h3><p>本页面展示公开历史数据的描述性分析与运营情景，不是实时预警，没有真实商家采用或业务改善证据。完整指标字典与交叉核验随项目文档提供。</p></div></div></details>
+  </main>
+  <footer class="footer"><span><strong>瞄店</strong>让履约风险，变成可讨论的运营动作。</span><div><a href="./SOURCE_LICENSE.md">数据来源与许可</a><span>个人产品实践 · 非实时业务</span></div></footer>
+  <dialog id="merchant-dialog" aria-labelledby="merchant-dialog-title"><div class="dialog-heading"><div><p class="eyebrow">商家诊断与干预建议</p><h2 id="merchant-dialog-title"></h2></div><button id="close-merchant" class="icon-button" type="button" aria-label="关闭商家诊断" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><div id="merchant-diagnosis"></div></dialog>
+  <noscript><p class="no-script">请开启浏览器脚本以使用三个分析页面与筛选。本页面不需要登录或连接数据服务。</p></noscript>
+  <!-- INLINE_APP -->
+</body>
+</html>

@@ -1,7 +1,14 @@
 {
-  "name": "olist-merchant-operations-dashboard",
-  "version": "3.0.0",
+  "name": "miaodian",
+  "displayName": "瞄店",
+  "version": "2.0.0",
   "private": true,
-  "description": "Olist historical merchant operations portfolio; buildless static web app",
-  "scripts": {"check": "node --check dist/app.js && node --check dist/static-api.js && node --check dist/data-worker.js"}
+  "type": "module",
+  "description": "瞄店：离线聚合、纯中文、无运行时数据下载的商家经营分析作品",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/verify.mjs",
+    "test": "node --test tests/test_runtime.mjs",
+    "preview": "node scripts/preview.mjs"
+  }
 }

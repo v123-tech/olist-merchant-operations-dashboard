@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "sourceSha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784",
+  "sourceBytes": 44717580,
+  "sourceOrders": 99441,
+  "sourceItems": 112650,
+  "validReviewRecords": 99160,
+  "chosenReviewedOrders": 98612,
+  "rawCategoryMappings": 73,
+  "sourceMerchants": 3095,
+  "highRiskMerchants": 37,
+  "selectedRoles": {
+    "高营收高延迟": 10,
+    "高营收高履约": 10,
+    "高增长": 10
+  },
+  "duplicateSellerSelection": 0,
+  "categoryGmvAddsToTotal": true,
+  "merchantGmvAddsToTotal": true,
+  "delayBandOrdersAddToEligible": true,
+  "replayCells": 88,
+  "replayAlertRange": [
+    0,
+    42
+  ],
+  "replayBadReviewRange": [
+    0,
+    16
+  ],
+  "crosscheck": {
+    "passed": true,
+    "fullCountsAndGmv": [
+      99441,
+      96470,
+      6534,
+      1359164370
+    ],
+    "lateReviewCounts": [
+      6381,
+      3983
+    ],
+    "legacyWindow": {
+      "全部": {
+        "eligible": 83696,
+        "late": 5930
+      },
+      "RJ": {
+        "eligible": 10891,
+        "late": 1436
+      },
+      "SP": {
+        "eligible": 34523,
+        "late": 1432
+      }
+    },
+    "chosenReviewScoresCompared": 98612,
+    "merchantOrderGmvAndDenominatorsCompared": 3095,
+    "databaseOpenedReadOnly": true,
+    "databaseWritten": false,
+    "databaseSha256Before": "700f92d83d2f318cb29705f8a042e9961f956e1e80352bf70de68ced638c8853",
+    "databaseSha256After": "700f92d83d2f318cb29705f8a042e9961f956e1e80352bf70de68ced638c8853",
+    "databaseUnchanged": true
+  },
+  "privacy": {
+    "rawOrderIds": false,
+    "rawSellerIds": false,
+    "reviewText": false,
+    "customerIds": false
+  },
+  "dashboardBytes": 35348,
+  "dashboardSha256": "b134baafd3fff607f1ce4f917bcdeafbc7ce5834094ce71a5e4acc2e25363281"
+}

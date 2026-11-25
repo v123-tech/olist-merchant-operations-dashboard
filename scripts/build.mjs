@@ -1,0 +1,38 @@
+/** No dependencies, network, raw-data reads, deletion or hosting mutation. */
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import {spawnSync} from 'node:child_process';
+import assert from 'node:assert/strict';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const read=p=>fs.readFile(path.join(root,p),'utf8');
+const [template,css,app,raw]=await Promise.all(['src/index.html','src/styles.css','src/app.mjs','src/dashboardData.json'].map(read));
+const bytes=Buffer.byteLength(raw);assert(bytes<80000,'聚合JSON必须小于80,000字节');
+const data=JSON.parse(raw);assert.equal(data.brand,'瞄店');assert.equal(data.version,2);
+const importLine=/^import dashboardData from ['"]\.\/dashboardData\.json['"] with \{\s*type:\s*['"]json['"]\s*\};?\r?\n/m;
+assert(importLine.test(app),'必须从唯一聚合JSON导入数据');
+const code=app.replace(importLine,'');
+assert(!/\b(?:fetch|XMLHttpRequest|Worker|WebSocket|EventSource)\s*\(|\bimport\s*(?:\(|[{*'"\w])/.test(code),'禁止运行时数据请求、Worker或额外模块');
+assert(!/<\/script/i.test(code),'脚本不得包含HTML结束标签');
+assert(!/<\/style/i.test(css));
+assert.equal(template.split('<!-- INLINE_STYLES -->').length,2);
+assert.equal(template.split('<!-- INLINE_APP -->').length,2);
+const safeData=JSON.stringify(data).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
+const script='const dashboardData='+safeData+';\n'+code;
+// Function replacements preserve literal JS tokens such as $&, $' and $`.
+const html=template.replace('<!-- INLINE_STYLES -->',()=>'<style>'+css+'</style>').replace('<!-- INLINE_APP -->',()=>'<script type="module">'+script+'</script>');
+const emittedScript=html.match(/<script type="module">([\s\S]*?)<\/script>/)?.[1];
+assert.equal(emittedScript,script,'内嵌过程改变了脚本文本');
+const syntax=spawnSync(process.execPath,['--check','--input-type=module'],{input:emittedScript,encoding:'utf8'});
+assert.equal(syntax.status,0,'打包后脚本语法错误：'+syntax.stderr);
+assert(!/商衡|加载订单明细|正在读取历史数据|cdn\.jsdelivr|orders\.json\.gz|items\.json\.gz/.test(html),'旧界面或下载器残留');
+assert(Buffer.byteLength(html)<150000,'完整单文件页面应小于150,000字节');
+await fs.mkdir(path.join(root,'dist/app'),{recursive:true});
+await fs.writeFile(path.join(root,'dist/index.html'),html);
+const redirect=(target)=>'<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>瞄店</title><meta http-equiv="refresh" content="0;url='+target+'"><a href="'+target+'">进入瞄店</a></html>\n';
+await fs.writeFile(path.join(root,'dist/app/index.html'),redirect('../'));
+await fs.writeFile(path.join(root,'dist/case.html'),redirect('./'));
+await fs.writeFile(path.join(root,'dist/.nojekyll'),'');
+for(const name of ['SOURCE_LICENSE.md','CODE_LICENSE.md'])await fs.copyFile(path.join(root,name),path.join(root,'dist',name));
+console.log(JSON.stringify({passed:true,brand:data.brand,dataBytes:bytes,htmlBytes:Buffer.byteLength(html),htmlSha256:createHash('sha256').update(html).digest('hex'),runtimeDataRequests:0,output:'dist',base:'relative; /olist-merchant-operations-dashboard/ compatible',deployed:false},null,2));
