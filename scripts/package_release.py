@@ -9,11 +9,73 @@ from zipfile import ZipFile, ZIP_DEFLATED
 ROOT = Path(__file__).resolve().parents[1]
 SKIP = {'.git', '__pycache__', 'node_modules'}
 FORBIDDEN = {'.zip', '.sqlite', '.db', '.pyc', '.log', '.pem', '.key', '.bundle', '.csv'}
+SOURCE_FILES = (
+    '.gitattributes',
+    '.gitignore',
+    'CODE_LICENSE.md',
+    'dist/.nojekyll',
+    'dist/app/index.html',
+    'dist/case.html',
+    'dist/CODE_LICENSE.md',
+    'dist/index.html',
+    'dist/SOURCE_LICENSE.md',
+    'docs/数据口径与交叉核验.md',
+    'docs/文件删改清单.md',
+    'docs/本地验收记录.md',
+    'docs/维护说明.md',
+    'evidence/acceptance-checks.json',
+    'evidence/data-checks.json',
+    'evidence/screenshots/desktop-diagnosis-1440.jpg',
+    'evidence/screenshots/desktop-merchants-1440.jpg',
+    'evidence/screenshots/desktop-overview-1366.jpg',
+    'evidence/screenshots/desktop-overview-1440.jpg',
+    'evidence/screenshots/desktop-replay-1440.jpg',
+    'evidence/screenshots/mobile-diagnosis-390.jpg',
+    'evidence/screenshots/mobile-merchants-390.jpg',
+    'evidence/screenshots/mobile-overview-390.jpg',
+    'evidence/screenshots/mobile-replay-390.jpg',
+    'package.json',
+    'README.md',
+    'scripts/build.mjs',
+    'scripts/package_release.py',
+    'scripts/prepare_dashboard.py',
+    'scripts/preview.mjs',
+    'scripts/verify.mjs',
+    'SOURCE_LICENSE.md',
+    'src/app.mjs',
+    'src/dashboardData.json',
+    'src/index.html',
+    'src/styles.css',
+    'tests/test_dashboard.py',
+    'tests/test_runtime.mjs',
+)
 
 
-def collect(directory):
+def collect(directory, allowed=None):
     result = []
-    for p in sorted(directory.iterdir()):
+    if allowed is None:
+        paths = sorted(directory.iterdir())
+    else:
+        if directory.is_symlink():
+            raise ValueError('拒绝符号链接：' + directory.name)
+        paths = []
+        for name in sorted(allowed):
+            relative = Path(name)
+            if relative.is_absolute() or '..' in relative.parts:
+                raise ValueError('交付白名单路径无效：' + name)
+            p = directory
+            for part in relative.parts:
+                if not p.is_dir():
+                    raise ValueError('交付文件的祖先不是目录：' + name)
+                p = p / part
+                if p.is_symlink():
+                    raise ValueError('拒绝符号链接：' + name)
+                if not p.exists():
+                    raise ValueError('缺少交付文件或目录：' + name)
+            if not p.is_file():
+                raise ValueError('交付白名单必须是文件：' + name)
+            paths.append(p)
+    for p in paths:
         if p.name in SKIP:
             continue
         if p.is_symlink():
@@ -58,7 +120,9 @@ def main():
     raw = (ROOT / 'src/dashboardData.json').read_bytes()
     assert len(raw) < 80000
     assert len((ROOT / 'dist/index.html').read_bytes()) < 150000
-    source = collect(ROOT)
+    source = collect(ROOT, SOURCE_FILES)
+    if len(source) != 38 or {p.relative_to(ROOT).as_posix() for p, _ in source} != set(SOURCE_FILES):
+        raise ValueError('源码交付必须恰好包含38件白名单文件')
     static = collect(ROOT / 'dist')
     assert len(static) == 6
     output.mkdir(parents=True, exist_ok=False)
